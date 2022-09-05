@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include antoryum_gayrimenkul *.css
+recursive-include antoryum_gayrimenkul *.csv
+recursive-include antoryum_gayrimenkul *.html
+recursive-include antoryum_gayrimenkul *.ico
+recursive-include antoryum_gayrimenkul *.js
+recursive-include antoryum_gayrimenkul *.json
+recursive-include antoryum_gayrimenkul *.md
+recursive-include antoryum_gayrimenkul *.png
+recursive-include antoryum_gayrimenkul *.py
+recursive-include antoryum_gayrimenkul *.svg
+recursive-include antoryum_gayrimenkul *.txt
+recursive-exclude antoryum_gayrimenkul *.pyc
