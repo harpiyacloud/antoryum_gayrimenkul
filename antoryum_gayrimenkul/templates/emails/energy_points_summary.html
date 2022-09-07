@@ -1,0 +1,54 @@
+{% from "harpiya/templates/includes/avatar_macro.html" import avatar %}
+{% if top_performer.energy_points %}
+<h1 class="text-2xl">{{ _('En İyi Performans') }} 🏆 </h1>
+<p>
+	<span class="text-muted">
+		{{ avatar(top_performer.user) }} &nbsp;
+		{{
+			_('{0} {1} puan kazandı').format(
+				harpiya.get_fullname(top_performer.user),
+				harpiya.utils.cint(top_performer.energy_points)
+			)
+		}}
+	</span>
+</p>
+{% endif %}
+
+{% if top_reviewer.given_points %}
+<h1 class="text-xl">{{ _('En İyi Derecelendirme') }} ❤️ </h1>
+<p>
+	<span class="text-muted">
+		{{ avatar(top_reviewer.user) }} &nbsp;
+		{{
+			_('{0} {1} puan verdi').format(
+				harpiya.get_fullname(top_reviewer.user),
+				harpiya.utils.cint(top_reviewer.given_points)
+			)
+		}}
+	</span>
+</p>
+{% endif %}
+
+
+<h3 class="text-regular" style="margin-top: 35px">{{ _('Puan Durumu') }} ({{ _('En İyi {0}').format(standings|length) }}) </h3>
+
+<table class='table table-bordered'>
+	<tr class="text-muted text-medium">
+		<td> # </td>
+		<td style='width: 70%'>{{ _('Kullanıcı') }}</td>
+		<td style='width: 15%'>{{ _('Enerji Puanı') }}</td>
+		<td style='width: 15%'>{{ _('Verilen Puanlar') }}</td>
+	</tr>
+	{% for user in standings %}
+	<tr class="text-small">
+		<td>{{ loop.index }}</td>
+		<td>{{ harpiya.get_fullname(user.user) }}</td>
+		<td class="text-muted">{{ harpiya.utils.cint(user.energy_points) }}</td>
+		<td class="text-muted">{{ harpiya.utils.cint(user.given_points) }}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+<p class="text-muted text-medium">
+	{{ footer_message }}
+</p>

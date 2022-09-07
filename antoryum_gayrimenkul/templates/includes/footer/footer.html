@@ -1,0 +1,95 @@
+{% include "templates/includes/footer/footer_extension.html" %}
+
+<footer class="main-footer fl-wrap">
+	<div class="footer-inner fl-wrap">
+		<div class="container">
+			<div class="row">
+				<!-- footer widget-->
+				<div class="col-md-4">
+					<div class="footer-widget fl-wrap">
+						<div class="footer-widget-logo fl-wrap">
+							{% include "templates/includes/footer/footer_logo_extension.html" %}
+						</div>
+						<div class="fw_hours fl-wrap">
+							<span>{{ _("Pazartesi") }} - {{ _("Cumartesi") }}:<strong> 09:00 - 18:00</strong></span>
+							<span>{{ _("Pazar") }}:<strong> 10:00 - 18:00</strong></span>
+						</div>
+					</div>
+				</div>
+				<!-- footer widget end-->
+				<!-- footer widget-->
+				<div class="col-md-4">
+					{% include "templates/includes/footer/footer_links.html" %}
+				</div>
+				<!-- footer widget end--> 
+				<!-- footer widget-->
+				<div class="col-md-4">
+					<div class="footer-widget fl-wrap">
+						<div class="footer-widget-title fl-wrap">
+							<h4>{{ _("İletişim Bilgileri") }}</h4>
+						</div>
+						<ul  class="footer-contacts fl-wrap">
+							{%- if contact.email_id %}
+							<li><span><i class="fal fa-envelope"></i> {{ _("E-posta") }} :</span><a href="mailto:info@antoryumgayrimenkul.com" target="_blank">{{ contact.email_id }}</a></li>
+							{%- endif -%}
+							{%- if contact.address_title %}
+							<li> <span><i class="fal fa-map-marker"></i> {{ _("Adres") }} :</span>
+								<a href="#" target="_blank">
+									{% if contact.address_line1 %} {{ contact.address_line1}} {% endif %} <br> {% if contact.address_line2 %} {{ contact.address_line2}} {% endif %} {% if contact.city %}{{ contact.city }}/{% endif %}{% if contact.state %}{{ contact.state }}{% endif %}
+								</a>
+							</li>
+							{%- endif -%}
+							{%- if contact.phone %}
+							<li><span><i class="fal fa-phone"></i> {{ _("Telefon") }} :</span><a href="tel:{{  contact.phone }}">{{ contact.phone }}</a></li>
+							{%- endif -%}
+							{%- if contact.whatsapp %}
+							<li><span><i class="fal fa-mobile"></i> {{ _("Mobil") }} :</span><a href="tel:{{ contact.whatsapp }}">{{ contact.whatsapp }}</a></li>
+							{%- endif -%}
+						</ul>
+						<div class="footer-social fl-wrap">
+							<ul>
+								{%- if contact.facebook -%}
+								<li><a href="{{ contact.facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+								{%- endif -%}
+								{%- if contact.twitter -%}
+								<li><a href="{{ contact.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+								{%- endif -%}
+								{%- if contact.instagram -%}
+								<li><a href="{{ contact.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+								{%- endif -%}
+								{%- if contact.youtube -%}
+								<li><a href="{{ contact.youtube }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
+								{%- endif -%}
+								{%- if contact.linkedin -%}
+								<li><a href="{{ contact.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+								{%- endif -%}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- footer widget end-->                                     
+			</div>
+		</div>
+	</div>
+	<!--sub-footer-->
+	<div class="sub-footer gray-bg fl-wrap">
+		<div class="container">
+			{% if copyright %}		 
+			<div class="copyright">
+				&copy; {{ copyright }}
+		    </div>
+			{% endif %}
+			
+			<div class="subfooter-nav">
+				{% block powered %}
+				{%- if footer_powered -%}
+					{{ footer_powered }}
+				{%- else -%}
+					{% include "templates/includes/footer/footer_powered.html" %}
+				{%- endif -%}
+				{% endblock %}
+			</div>
+		</div>
+	</div>
+	<!--sub-footer end -->                     
+</footer>

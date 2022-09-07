@@ -1,0 +1,50 @@
+<div class="gallery-item 
+		{% if doc.estate_type == 'Satılık' %}for_sale{% elif doc.estate_type == 'Kiralık' %}for_rent{% else %}
+		for_sale for_arazi{% endif %}
+		">
+	<!-- listing-item -->
+	<div class="listing-item">
+		<article class="geodir-category-listing fl-wrap">
+			<div class="geodir-category-img fl-wrap">
+				<a href="/{{ doc.route }}" class="geodir-category-img_item">
+					<img src="{{ doc.manset_resmi }}" alt="{{ doc.name }}">
+					<div class="overlay"></div>
+				</a>
+				<div class="geodir-category-location">
+					<a href="#" class="single-map-item tolt" data-newlatitude="{{ doc.enlem }}" data-newlongitude="{{ doc.boylam }}"   data-microtip-position="top-left" data-tooltip="{{ _('Harita') }}"><i class="fas fa-map-marker-alt"></i> <span>  {{ doc.mahalle }} / {{ doc.ilce }}</span></a>
+				</div>
+				<ul class="list-single-opt_header_cat">
+					<li><a href="#" class="cat-opt blue-bg">
+						{% if doc.estate_type == 'Arazi' %}
+                           {{ _('Satılık') }}
+                        {% else %}
+                           {{ _(doc.estate_type) }}
+                        {% endif %}
+					</a></li>
+					<li><a href="#" class="cat-opt color-bg">{{ _(doc.category.title) }}</a></li>
+				</ul>
+				<a href="#" class="geodir_save-btn tolt" data-microtip-position="left" data-tooltip="{{ _('Kaydet') }}"><span><i class="fal fa-heart"></i></span></a>
+				<a href="#" class="compare-btn tolt" data-microtip-position="left" data-tooltip="{{ _('Karşılaştır') }}"><span><i class="fal fa-random"></i></span></a>
+				<div class="geodir-category-listing_media-list">
+					<span><i class="fas fa-camera"></i></span>
+				</div>
+			</div>
+			<div class="geodir-category-content fl-wrap">
+				<h3 class="title-sin_item"><a href="/{{ doc.route }}">{{ _(doc.title[:25]) }}...</a></h3>
+				<div class="geodir-category-content_price">
+					{% if doc.currency != '₺' %} {{ doc.currency }} {% endif %} 
+					{{ harpiya.format(doc.estate_price, {'fieldtype': 'Currency'})}} 
+					{% if doc.currency == '₺' %} {{ doc.currency }} {% endif %}
+				</div>
+				<div class="geodir-category-content-details">
+					<ul>
+						<li><i class="fal fa-home"></i><span>{{ _(doc.category.title) }}</span></li>
+						{% if doc.oda_sayisi %}<li><i class="fal fa-loveseat"></i><span>{{ doc.oda_sayisi }}</span></li>{% endif %}
+						{% if doc.net_mt2 %}<li><i class="fal fa-cube"></i><span>{{ doc.net_mt2 }} m2</span></li>{% endif %}
+					</ul>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- listing-item end-->															
+</div>

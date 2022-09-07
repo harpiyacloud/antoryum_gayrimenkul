@@ -1,0 +1,624 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+{%- set estate_broker = harpiya.get_doc('Broker', doc.broker) -%}
+{%- set broker_info = harpiya.get_doc('User', estate_broker.user) -%}
+{%- set category = harpiya.get_doc('Estate Category', doc.estate_category) -%}
+{% if doc.gallery%}
+{%- set estate_gallery = harpiya.get_doc('Gallery', doc.gallery) -%}
+{%- set images = estate_gallery.gallery_items -%}
+{% endif %}
+
+<div class="gray-bg small-padding fl-wrap">
+    <div class="container">
+       <div class="row">
+          <!--  listing-single content -->
+          <div class="col-md-8">
+             <div class="list-single-main-wrapper fl-wrap">
+                <!--  scroll-nav-wrap -->
+                <div class="scroll-nav-wrap">
+                   <nav class="scroll-nav scroll-init fixed-column_menu-init">
+                      <ul class="no-list-style">
+                         <li><a class="act-scrlink" href="#sec1"><i class="fal fa-info"></i> </a><span>{{ _('Detaylar') }}</span></li>
+                         <li><a href="#sec2"><i class="fal fa-stars"></i></a><span>{{ _('Özellikler') }}</span></li>
+                         <li><a href="#sec5"><i class="fal fa-map-pin"></i></a><span>{{ _('Konum') }}</span></li>
+                      </ul>
+                      <div class="progress-indicator">
+                         <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="-1 -1 34 34">
+                            <circle cx="16" cy="16" r="15.9155"
+                               class="progress-bar__background" />
+                            <circle cx="16" cy="16" r="15.9155"
+                               class="progress-bar__progress 
+                               js-progress-bar" />
+                         </svg>
+                      </div>
+                   </nav>
+                </div>
+                <!--  scroll-nav-wrap end-->
+                <!--  list-single-opt_header-->
+                <div class="list-single-opt_header fl-wrap">
+                   <ul class="list-single-opt_header_cat">
+                      <li><a href="#" class="cat-opt color-bg">
+                        {% if doc.estate_type == 'Arazi' %}
+                           {{ _('Satılık') }}
+                        {% else %}
+                           {{ _(doc.estate_type) }}
+                        {% endif %}
+                     </a></li>
+                      <li><a href="#" class="cat-opt blue-bg">{{ _(category.title) }}</a></li>
+                   </ul>
+                   <div class="share-holder hid-share">
+                      <a href="#" class="share-btn showshare sfcs">  <i class="fas fa-share-alt"></i>  {{ _('Paylaş') }}   </a>
+                      <div class="share-container  isShare"></div>
+                   </div>
+                </div>
+                <!--  list-single-opt_header end -->
+                <!--  list-single-header-item-->
+                <div class="list-single-header-item  fl-wrap" id="sec1">
+                   <div class="row">
+                      <div class="col-md-8">
+                         <h1>{{ _(doc.title) }}<span class="verified-badge tolt" data-microtip-position="bottom"  data-tooltip="Verified"><i class="fas fa-check"></i></span></h1>
+                         <div class="geodir-category-location fl-wrap">
+                            <a href="#"><i class="fas fa-map-marker-alt"></i> {{ doc.mahalle }} / {{ doc.ilce }}</a> 
+                         </div>
+                      </div>
+                      <div class="col-md-4">
+                         <a class="host-avatar-wrap" href="#">
+                         <span>{{ estate_broker.full_name }}</span>
+
+                         <img src="/assets/antoryum_gayrimenkul/images/loader.png" alt="">
+                         </a>
+                      </div>
+                   </div>
+                   <div class="list-single-header-footer fl-wrap">
+                      <div class="list-single-header-price" data-propertyprise="{{ doc.estate_price }}">{{ _('Fiyat') }}:</strong>
+                        {% if doc.currency != '₺' %} <span>{{ doc.currency }}</span> {% endif %} 
+                        {{ harpiya.format(doc.estate_price, {'fieldtype': 'Currency'})}} 
+                        {% if doc.currency == '₺' %} <span>{{ doc.currency }}</span> {% endif %} 
+                    </div>
+                      <div class="list-single-header-date"><span>{{ _('Tarih') }}:</span>{{ harpiya.format_date(published_on) }}</div>
+                   </div>
+                </div>
+                <div class="list-single-main-media fl-wrap">
+                   <div class="single-slider-wrapper carousel-wrap fl-wrap">
+                      <div class="slider-for fl-wrap carousel lightgallery"  >
+                         <!--  slick-slide-item -->
+                         {% for i in images %}
+                         <div class="slick-slide-item">
+                            <div class="box-item">
+                               <a href="{{ i.image }}" class="gal-link popup-image"><i class="fal fa-search"  ></i></a>
+                               <img src="{{ i.image }}" alt="">
+                            </div>
+                         </div>
+                         {% endfor %}
+                         <!--  slick-slide-item end -->
+                      </div>
+                      <div class="swiper-button-prev ssw-btn"><i class="fas fa-caret-left"></i></div>
+                      <div class="swiper-button-next ssw-btn"><i class="fas fa-caret-right"></i></div>
+                   </div>
+                   <div class="single-slider-wrapper fl-wrap">
+                      <div class="slider-nav fl-wrap">
+                        {% for i in images%}
+                         <div class="slick-slide-item"><img src="{{ i.image }}" alt="{{ doc.title}}" style="height: 94px !important" class="img-responsive"></div>
+                        {% endfor %}
+                      </div>
+                   </div>
+                </div>
+                <div class="list-single-facts fl-wrap">
+                   <!-- inline-facts -->
+                   <div class="inline-facts-wrap">
+                      <div class="inline-facts">
+                         <i class="fal fa-home-lg"></i>
+                         <h6>{{ _('Tür') }}</h6>
+                         <span>{{ _(category.title) }}</span>
+                      </div>
+                   </div>
+                   <!-- inline-facts end -->
+                   {% if oda_sayisi and doc.estate_type != 'Arazi' %}
+                   <!-- inline-facts  -->
+                   <div class="inline-facts-wrap">
+                      <div class="inline-facts">
+                         <i class="fal fa-loveseat"></i>
+                         <h6>{{ _('Oturum') }}</h6>
+                         <span>{{ doc.oda_sayisi }}</span>
+                      </div>
+                   </div>
+                   {% endif %}
+                   <!-- inline-facts end -->
+                   {% if yatak_odasi and doc.estate_type != 'Arazi'  %}
+                   <!-- inline-facts -->
+                   <div class="inline-facts-wrap">
+                      <div class="inline-facts">
+                         <i class="fal fa-bed"></i>
+                         <h6>{{ _('Yatak Odası') }}</h6>
+                         <span>{{ doc.yatak_odasi }}</span>
+                      </div>
+                   </div>
+                   {% endif %}
+                   <!-- inline-facts end -->
+                   {% if doc.banyo_sayisi and doc.estate_type != 'Arazi' %}
+                   <!-- inline-facts -->
+                   <div class="inline-facts-wrap">
+                      <div class="inline-facts">
+                         <i class="fal fa-bath"></i>
+                         <h6>{{ _('Banyo') }}</h6>
+                         <span>{{ doc.banyo_sayisi }}</span>
+                      </div>
+                   </div>
+                   {% endif %}
+                   {% if doc.net_mt2 and doc.estate_type == 'Arazi' %}
+                   <!-- inline-facts -->
+                   <div class="inline-facts-wrap">
+                      <div class="inline-facts">
+                         <i class="fal fa-cube"></i>
+                         <h6>{{ _('Metrekare') }}</h6>
+                         <span>{{ doc.net_mt2 }} mt2</span>
+                      </div>
+                   </div>
+                   {% endif %}
+                   <!-- inline-facts end -->                                                                        
+                </div>
+                <div class="list-single-main-container fl-wrap">
+                   <!-- list-single-main-item -->
+                   <div class="list-single-main-item fl-wrap">
+                      <div class="list-single-main-item-title">
+                         <h3>{{ _('İlan Bilgisi') }}</h3>
+                      </div>
+                      <div class="list-single-main-item_content fl-wrap">
+                         {% if doc.content %}
+                           {{ _(doc.content ) }}
+                         {% endif %}
+                      </div>
+                   </div>
+                   <!-- list-single-main-item end -->                                          
+                   <!-- list-single-main-item -->
+                   <div class="list-single-main-item fl-wrap" id="sec2">
+                      <div class="list-single-main-item-title">
+                         <h3>{{ _('Detaylar') }}</h3>
+                      </div>
+                      <div class="list-single-main-item_content fl-wrap">
+                         <div class="details-list">
+                            <ul>
+                               <li><span>{{ _('İlan Id') }}:</span>{{ doc.name }}</li>
+                               {% if doc.estate_type != 'Arazi' %}
+                                 {% if doc.brut_mt2 %}<li><span>{{ _('mt2 (Brüt)') }}:</span>{{ doc.brut_mt2 }}</li>{% endif %}
+                                 {% if doc.net_mt2 %}<li><span>{{ _('mt2 (net)') }}:</span>{{ doc.net_mt2 }}</li>{% endif %}
+                                 {% if doc.oda_sayisi %}<li><span>{{ _('Oda Sayısı') }}:</span>{{ doc.oda_sayisi }}</li>{% endif %}
+                                 {% if doc.bina_yasi %}<li><span>{{ _('Bina Yaşı') }}:</span>{{ doc.bina_yasi }}</li>{% endif %}
+                                 {% if doc.bulundugu_kat %}<li><span>{{ _('Bulunduğu Kat') }}:</span>{{ doc.bulundugu_kat }}</li>{% endif %}
+                                 {% if doc.bina_kat_sayisi %}<li><span>{{ _('Kat Sayısı') }}:</span>{{ doc.bina_kat_sayisi }}</li>{% endif %}
+                                 {% if doc.isitma_tipi %}<li><span>{{ _('Isıtma') }}:</span>{{ doc.isitma_tipi }}</li>{% endif %}
+                                 {% if doc.banyo_sayisi %}<li><span>{{ _('Banyo Sayısı') }}:</span>{{ doc.banyo_sayisi }}</li>{% endif %}
+                                 {% if doc.wc %}<li><span>{{ _('WC Sayısı') }}:</span>{{ doc.wc }}</li>{% endif %}
+                                 {% if doc.balkon %}<li><span>{{ _('Balkon Durumu') }}:</span>{{ doc.balkon }}</li>{% endif %}
+                                 {% if doc.kullanim_durumu %}<li><span>{{ _('Kullanım Durumu') }}:</span>{{ doc.kullanim_durumu }}</li>{% endif %}
+                                 {% if doc.esya_durumu %}<li><span>{{ _('Eşya Durumu') }}:</span>{{ doc.esya_durumu }}</li>{% endif %}
+                                 {% if doc.site_icerisi %}<li><span>{{ _('Site İçerisinde') }}:</span>{{ doc.site_icerisi }}</li>{% endif %}
+                                 {% if doc.ipotek_durumu %}<li><span>{{ _('İpotek Durumu') }}:</span>{{ doc.ipotek_durumu }}</li>{% endif %}
+                                 {% if doc.krediye_uygunluk %}<li><span>{{ _('Krediye Uygunluk') }}:</span>{{ doc.krediye_uygunluk }}</li>{% endif %}
+                                 {% if doc.yatirim %}<li><span>{{ _('Yatırıma Uygunluk') }}:</span>{{ doc.yatirim }}</li>{% endif %}
+                                 {% if doc.esya_durumu %}<li><span>{{ _('Eşya Durumu') }}:</span>{{ doc.esya_durumu }}</li>{% endif %}
+                                 {% if doc.estate_kira %}<li><span>{{ _('Kira Getirisi') }}:</span>{{ doc.estate_kira }}{{ doc.currency }}</li>{% endif %}
+                                 {% if doc.aidat %}<li><span>{{ _('Aidat') }}:</span>{{ doc.aidat }}</li>{% endif %}
+                               {% else %}
+                                 {% if doc.net_mt2 %}<li><span>{{ _('Metrekare') }}:</span>{{ doc.net_mt2 }}</li>{% endif %}
+                                 {% if doc.mt_birim_fiyati %}<li><span>{{ _('mt2 Birim Fiyatı') }}:</span>{{ doc.mt_birim_fiyati }}/mt2</li>{% endif %}
+                                 {% if doc.kar_karsiligi %}<li><span>{{ _('Kat Karşılığı') }}:</span>{{ doc.kar_karsiligi }}</li>{% endif %}
+                                 {% if doc.ipotek_durumu %}<li><span>{{ _('İpotek Durumu') }}:</span>{{ doc.ipotek_durumu }}</li>{% endif %}
+                                 {% if doc.krediye_uygunluk %}<li><span>{{ _('Krediye Uygunluk') }}:</span>{{ doc.krediye_uygunluk }}</li>{% endif %}
+                                 {% if doc.yatirim %}<li><span>{{ _('Yatırıma Uygunluk') }}:</span>{{ doc.yatirim }}</li>{% endif %}
+                               {% endif %}
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                   <!-- list-single-main-item end -->  
+                   <!-- list-single-main-item -->
+                   {% if doc.estate_type != 'Arazi' %}
+                   <div class="list-single-main-item fl-wrap">
+                      <div class="list-single-main-item-title">
+                         <h3>{{ _('Cephe') }}</h3>
+                      </div>
+                      <div class="list-single-main-item_content fl-wrap">
+                         <div class="listing-features ">
+                            <ul>
+                                <li><i class="fal {% if doc.bati %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.bati %} style="color: grey;"{% endif %}>{{ _('Batı') }} </span></li>
+                                <li><i class="fal {% if doc.dogu %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.dogu %} style="color: grey;"{% endif %}>{{ _('Doğu') }} </span></li>
+                                <li><i class="fal {% if doc.kuzey %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.kuzey %} style="color: grey;"{% endif %}>{{ _('Kuzey') }} </span></li>
+                                <li><i class="fal {% if doc.guney %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.guney %} style="color: grey;"{% endif %}>{{ _('Güney') }} </span></li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                   {% endif %}
+                   {% if doc.estate_type != 'Arazi' %}
+                   <div class="list-single-main-item fl-wrap">
+                      <div class="list-single-main-item-title">
+                         <h3>{{ _('İç Özellikler') }}</h3>
+                      </div>
+                      <div class="list-single-main-item_content fl-wrap">
+                         <div class="listing-features ">
+                            <ul>
+                                <li><i class="fal {% if doc.adsl %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.adsl %} style="color: grey;"{% endif %}>{{ _('ADSL') }} </span></li>
+                                <li><i class="fal {% if doc.yangin_alarimi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.yangin_alarimi %} style="color: grey;"{% endif %}>{{ _('Alarm (Yangın)') }} </span></li>
+                                <li><i class="fal {% if doc.amerikan_mutfak %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.amerikan_mutfak %} style="color: grey;"{% endif %}>{{ _('Amerikan Mutfak') }} </span></li>
+                                <li><i class="fal {% if doc.beyaz_esya %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.beyaz_esya %} style="color: grey;"{% endif %}>{{ _('Beyaz Eşya') }} </span></li>
+                                <li><i class="fal {% if doc.c_kurutma_makinesi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.c_kurutma_makinesi %} style="color: grey;"{% endif %}>{{ _('Çamaşır Kurutma Makinesi') }} </span></li>
+                                <li><i class="fal {% if doc.dusakabin %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.dusakabin %} style="color: grey;"{% endif %}>{{ _('Duşakabin') }} </span></li>
+                                <li><i class="fal {% if doc.fiber %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.fiber %} style="color: grey;"{% endif %}>{{ _('Fiber İnternet') }} </span></li>
+                                <li><i class="fal {% if doc.wi_fi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.wi_fi %} style="color: grey;"{% endif %}>{{ _('Wi-Fi') }} </span></li>
+                                <li><i class="fal {% if doc.hilton_banyo %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.hilton_banyo %} style="color: grey;"{% endif %}>{{ _('Hilton Banyo') }} </span></li>
+                                <li><i class="fal {% if doc.kartonpiyer %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.kartonpiyer %} style="color: grey;"{% endif %}>{{ _('Kartonpiyer') }} </span></li>
+                                <li><i class="fal {% if doc.laminat %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.laminat %} style="color: grey;"{% endif %}>{{ _('Laminat ZEmin') }} </span></li>
+                                <li><i class="fal {% if doc.mutfak_laminat %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.mutfak_laminat %} style="color: grey;"{% endif %}>{{ _('Mutfak (Laminat)') }} </span></li>
+                                <li><i class="fal {% if doc.pvc_dograma %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.pvc_dograma %} style="color: grey;"{% endif %}>{{ _('PVC Doğrama') }} </span></li>
+                                <li><i class="fal {% if doc.sofben %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.sofben %} style="color: grey;"{% endif %}>{{ _('Şofben') }} </span></li>
+                                <li><i class="fal {% if doc.vestiyer %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.vestiyer %} style="color: grey;"{% endif %}>{{ _('Vestiyer') }} </span></li>
+                                <li><i class="fal {% if doc.ahsap_dograma %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.ahsap_dograma %} style="color: grey;"{% endif %}>{{ _('Ahşap Doğrama') }} </span></li>
+                                <li><i class="fal {% if doc.alaturka_tuvalet %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.alaturka_tuvalet %} style="color: grey;"{% endif %}>{{ _('Alaturka Tuvalet') }} </span></li>
+                                <li><i class="fal {% if doc.ankastre_firin %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.ankastre_firin %} style="color: grey;"{% endif %}>{{ _('Ankastre Fırın') }} </span></li>
+                                <li><i class="fal {% if doc.boyali %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.boyali %} style="color: grey;"{% endif %}>{{ _('Boyalı') }} </span></li>
+                                <li><i class="fal {% if doc.camasir_makinesi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.camasir_makinesi %} style="color: grey;"{% endif %}>{{ _('Çamaşır Makinesi') }} </span></li>
+                                <li><i class="fal {% if doc.duvar_kagidi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.duvar_kagidi %} style="color: grey;"{% endif %}>{{ _('Duvar Kağıdı') }} </span></li>
+                                <li><i class="fal {% if doc.giyinme_odasi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.giyinme_odasi %} style="color: grey;"{% endif %}>{{ _('Giyinme Odası') }} </span></li>
+                                <li><i class="fal {% if doc.intercom_sistemi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.intercom_sistemi %} style="color: grey;"{% endif %}>{{ _('Intercom Sistemi') }} </span></li>
+                                <li><i class="fal {% if doc.kiler %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.kiler %} style="color: grey;"{% endif %}>{{ _('Kiler') }} </span></li>
+                                <li><i class="fal {% if doc.marley %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.marley %} style="color: grey;"{% endif %}>{{ _('Marley') }} </span></li>
+                                <li><i class="fal {% if doc.mutfak_dogalgazi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.mutfak_dogalgazi %} style="color: grey;"{% endif %}>{{ _('Mutfak Doğalgazı') }} </span></li>
+                                <li><i class="fal {% if doc.seramik_zemin %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.seramik_zemin %} style="color: grey;"{% endif %}>{{ _('Seramik Zemin') }} </span></li>
+                                <li><i class="fal {% if doc.somine %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.somine %} style="color: grey;"{% endif %}>{{ _('Şömine') }} </span></li>
+                                <li><i class="fal {% if doc.akilli_ev %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.akilli_ev %} style="color: grey;"{% endif %}>{{ _('Akıllı Ev') }} </span></li>
+                                <li><i class="fal {% if doc.asansor %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.asansor %} style="color: grey;"{% endif %}>{{ _('Asansör') }} </span></li>
+                                <li><i class="fal {% if doc.a_dograma %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.a_dograma %} style="color: grey;"{% endif %}>{{ _('Alüminyum Doğrama') }} </span></li>
+                                <li><i class="fal {% if doc.bulasik_makinesi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.bulasik_makinesi %} style="color: grey;"{% endif %}>{{ _('Bulaşık Makinesi') }} </span></li>
+                                <li><i class="fal {% if doc.camasir_odasi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.camasir_odasi %} style="color: grey;"{% endif %}>{{ _('Çamaşır Odası') }} </span></li>
+                                <li><i class="fal {% if doc.ebeveyn_banyusu %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.ebeveyn_banyusu %} style="color: grey;"{% endif %}>{{ _('Ebeveny Banyosu') }} </span></li>
+                                <li><i class="fal {% if doc.gomme_dolap %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.gomme_dolap %} style="color: grey;"{% endif %}>{{ _('Gömme Dolap') }} </span></li>
+                                <li><i class="fal {% if doc.isi_cam %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.isi_cam %} style="color: grey;"{% endif %}>{{ _('Isıcam') }} </span></li>
+                                <li><i class="fal {% if doc.klima %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.klima %} style="color: grey;"{% endif %}>{{ _('Klima') }} </span></li>
+                                <li><i class="fal {% if doc.mobilya %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.mobilya %} style="color: grey;"{% endif %}>{{ _('Mobilya') }} </span></li>
+                                <li><i class="fal {% if doc.panjur %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.panjur %} style="color: grey;"{% endif %}>{{ _('Panjur/Jaluzi') }} </span></li>
+                                <li><i class="fal {% if doc.set_ustu_ocak %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.set_ustu_ocak %} style="color: grey;"{% endif %}>{{ _('Set Üstü Ocak') }} </span></li>
+                                <li><i class="fal {% if doc.teras %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.teras %} style="color: grey;"{% endif %}>{{ _('Teras') }} </span></li>
+                                <li><i class="fal {% if doc.yuz_tanima %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.yuz_tanima %} style="color: grey;"{% endif %}>{{ _('Yüz Tanıma & Parmak İzi') }} </span></li>
+                                <li><i class="fal {% if doc.alarm_hirsiz %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.alarm_hirsiz %} style="color: grey;"{% endif %}>{{ _('Alarm (Hırsız)') }} </span></li>
+                                <li><i class="fal {% if doc.amerikan_kapi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.amerikan_kapi %} style="color: grey;"{% endif %}>{{ _('Amerikan Kapı') }} </span></li>
+                                <li><i class="fal {% if doc.barbeku %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.barbeku %} style="color: grey;"{% endif %}>{{ _('Barbekü') }} </span></li>
+                                <li><i class="fal {% if doc.buzdolabi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.buzdolabi %} style="color: grey;"{% endif %}>{{ _('Buz Dolabı') }} </span></li>
+                                <li><i class="fal {% if doc.celik_kapi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.celik_kapi %} style="color: grey;"{% endif %}>{{ _('Çelik Kapı') }} </span></li>
+                                <li><i class="fal {% if doc.firin %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.firin %} style="color: grey;"{% endif %}>{{ _('Fırın') }} </span></li>
+                                <li><i class="fal {% if doc.diyafon %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.diyafon %} style="color: grey;"{% endif %}>{{ _('Görüntülü Diyafon') }} </span></li>
+                                <li><i class="fal {% if doc.jakuzi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.jakuzi %} style="color: grey;"{% endif %}>{{ _('Jakuzi') }} </span></li>
+                                <li><i class="fal {% if doc.kuvet %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.kuvet %} style="color: grey;"{% endif %}>{{ _('Küvet') }} </span></li>
+                                <li><i class="fal {% if doc.mutfak_ankastre %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.mutfak_ankastre %} style="color: grey;"{% endif %}>{{ _('Mutfak (Ankastre)') }} </span></li>
+                                <li><i class="fal {% if doc.parke_zemin %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.parke_zemin %} style="color: grey;"{% endif %}>{{ _('Parke Zemin') }} </span></li>
+                                <li><i class="fal {% if doc.spot_aydinlatma %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.spot_aydinlatma %} style="color: grey;"{% endif %}>{{ _('Spot Aydınlatma') }} </span></li>
+                                <li><i class="fal {% if doc.termosifon %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.termosifon %} style="color: grey;"{% endif %}>{{ _('Termosifon') }} </span></li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                   {% endif %}
+
+                   {% if doc.estate_type != 'Arazi' %}
+                   <div class="list-single-main-item fl-wrap">
+                      <div class="list-single-main-item-title">
+                         <h3>{{ _('Dış Özellikler') }}</h3>
+                      </div>
+                      <div class="list-single-main-item_content fl-wrap">
+                         <div class="listing-features ">
+                            <ul>
+                                <li><i class="fal {% if doc.tam_saat_guvenlik %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.tam_saat_guvenlik %} style="color: grey;"{% endif %}>{{ _('24 Saat Güvenlik') }} </span></li>
+                                <li><i class="fal {% if doc.ansansor %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.ansansor %} style="color: grey;"{% endif %}>{{ _('Asansör') }} </span></li>
+                                <li><i class="fal {% if doc.hamam %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.hamam %} style="color: grey;"{% endif %}>{{ _('Hamam') }} </span></li>
+                                <li><i class="fal {% if doc.kablo_tv %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.kablo_tv %} style="color: grey;"{% endif %}>{{ _('Kablo TV') }} </span></li>
+                                <li><i class="fal {% if doc.mustakil_havuz %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.mustakil_havuz %} style="color: grey;"{% endif %}>{{ _('Müstakil Havuz') }} </span></li>
+                                <li><i class="fal {% if doc.ses_yalitimi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.ses_yalitimi %} style="color: grey;"{% endif %}>{{ _('Ses Yalıtımı') }} </span></li>
+                                <li><i class="fal {% if doc.tenis %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.tenis %} style="color: grey;"{% endif %}>{{ _('Teniz Kortu') }} </span></li>
+                                <li><i class="fal {% if doc.yuzme_havuzu %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.yuzme_havuzu %} style="color: grey;"{% endif %}>{{ _('Yüzme Havuzu (Kapalı)') }} </span></li>
+                                <li><i class="fal {% if doc.hidrofor %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.hidrofor %} style="color: grey;"{% endif %}>{{ _('Hidrofor') }} </span></li>
+                                <li><i class="fal {% if doc.kamera_sistemi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.kamera_sistemi %} style="color: grey;"{% endif %}>{{ _('Kamera Sistemi') }} </span></li>
+                                <li><i class="fal {% if doc.otomarik_acik %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.otomarik_acik %} style="color: grey;"{% endif %}>{{ _('Otomark - Açık') }} </span></li>
+                                <li><i class="fal {% if doc.siding %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.siding %} style="color: grey;"{% endif %}>{{ _('Siding') }} </span></li>
+                                <li><i class="fal {% if doc.uydu %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.uydu %} style="color: grey;"{% endif %}>{{ _('Uydu') }} </span></li>
+                                <li><i class="fal {% if doc.buhar_odasi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.buhar_odasi %} style="color: grey;"{% endif %}>{{ _('Buhar Odası') }} </span></li>
+                                <li><i class="fal {% if doc.isi_yalitimi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.isi_yalitimi %} style="color: grey;"{% endif %}>{{ _('Isıtma Yalıtımı') }} </span></li>
+                                <li><i class="fal {% if doc.kapici %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.kapici %} style="color: grey;"{% endif %}>{{ _('Kapıcı') }} </span></li>
+                                <li><i class="fal {% if doc.otopark_kapali %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.otopark_kapali %} style="color: grey;"{% endif %}>{{ _('Otopark - Kapalı') }} </span></li>
+                                <li><i class="fal {% if doc.spor_alani %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.spor_alani %} style="color: grey;"{% endif %}>{{ _('Spor Alanı') }} </span></li>
+                                <li><i class="fal {% if doc.yangin_merdiveni %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.yangin_merdiveni %} style="color: grey;"{% endif %}>{{ _('Yangın Merdiveni') }} </span></li>
+                                <li><i class="fal {% if doc.cocuk_oyun_parki %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.cocuk_oyun_parki %} style="color: grey;"{% endif %}>{{ _('Çocuk Oyun Parkı') }} </span></li>
+                                <li><i class="fal {% if doc.jenerator %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.jenerator %} style="color: grey;"{% endif %}>{{ _('Jenerator') }} </span></li>
+                                <li><i class="fal {% if doc.kres %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.kres %} style="color: grey;"{% endif %}>{{ _('Kreş') }} </span></li>
+                                <li><i class="fal {% if doc.sauna %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.sauna %} style="color: grey;"{% endif %}>{{ _('Sauna') }} </span></li>
+                                <li><i class="fal {% if doc.su_deposu %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.su_deposu %} style="color: grey;"{% endif %}>{{ _('Su Deposu') }} </span></li>
+                                <li><i class="fal {% if doc.havuz_acik %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.havuz_acik %} style="color: grey;"{% endif %}>{{ _('Yüzme Havuzu (Açık)') }} </span></li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                   {% endif %}
+
+                   {% if doc.estate_type != 'Arazi' %}
+                   <div class="list-single-main-item fl-wrap">
+                      <div class="list-single-main-item-title">
+                         <h3>{{ _('Muhit') }}</h3>
+                      </div>
+                      <div class="list-single-main-item_content fl-wrap">
+                         <div class="listing-features ">
+                            <ul>
+                                <li><i class="fal {% if doc.alisveris_merkezi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.alisveris_merkezi %} style="color: grey;"{% endif %}>{{ _('Alışveriş Merkezi') }} </span></li>
+                                <li><i class="fal {% if doc.denize_sifir %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.denize_sifir %} style="color: grey;"{% endif %}>{{ _('Denize Sıfır') }} </span></li>
+                                <li><i class="fal {% if doc.hastane %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.hastane %} style="color: grey;"{% endif %}>{{ _('Hastane') }} </span></li>
+                                <li><i class="fal {% if doc.kilise %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.kilise %} style="color: grey;"{% endif %}>{{ _('Kilise') }} </span></li>
+                                <li><i class="fal {% if doc.polis %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.polis %} style="color: grey;"{% endif %}>{{ _('Polis Merkezi') }} </span></li>
+                                <li><i class="fal {% if doc.belediye %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.belediye %} style="color: grey;"{% endif %}>{{ _('Belediye') }} </span></li>
+                                <li><i class="fal {% if doc.eczane %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.eczane %} style="color: grey;"{% endif %}>{{ _('Eczane') }} </span></li>
+                                <li><i class="fal {% if doc.havra %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.havra %} style="color: grey;"{% endif %}>{{ _('Havra') }} </span></li>
+                                <li><i class="fal {% if doc.lise %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.lise %} style="color: grey;"{% endif %}>{{ _('Lise') }} </span></li>
+                                <li><i class="fal {% if doc.saglik_ocagi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.saglik_ocagi %} style="color: grey;"{% endif %}>{{ _('Sağlık Ocağı') }} </span></li>
+                                <li><i class="fal {% if doc.universite %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.universite %} style="color: grey;"{% endif %}>{{ _('Üniversite') }} </span></li>
+                                <li><i class="fal {% if doc.cami %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.cami %} style="color: grey;"{% endif %}>{{ _('Cami') }} </span></li>
+                                <li><i class="fal {% if doc.eglence_merkezi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.eglence_merkezi %} style="color: grey;"{% endif %}>{{ _('Eğlence Merkezi') }} </span></li>
+                                <li><i class="fal {% if doc.okul %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.okul %} style="color: grey;"{% endif %}>{{ _('İlkokul-Ortaokul') }} </span></li>
+                                <li><i class="fal {% if doc.market %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.market %} style="color: grey;"{% endif %}>{{ _('Market') }} </span></li>
+                                <li><i class="fal {% if doc.pazar %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.pazar %} style="color: grey;"{% endif %}>{{ _('Semt Pazarı') }} </span></li>
+                                <li><i class="fal {% if doc.cemevi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.cemevi %} style="color: grey;"{% endif %}>{{ _('Cemevi') }} </span></li>
+                                <li><i class="fal {% if doc.fuar %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.fuar %} style="color: grey;"{% endif %}>{{ _('Fuar') }} </span></li>
+                                <li><i class="fal {% if doc.itfaye %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.itfaye %} style="color: grey;"{% endif %}>{{ _('İtfaye') }} </span></li>
+                                <li><i class="fal {% if doc.park %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.park %} style="color: grey;"{% endif %}>{{ _('Park') }} </span></li>
+                                <li><i class="fal {% if doc.spor_salonu %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.spor_salonu %} style="color: grey;"{% endif %}>{{ _('Spor Salonu') }} </span></li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                   {% endif %}
+
+                   <div class="list-single-main-item fl-wrap">
+                      <div class="list-single-main-item-title">
+                         <h3>{{ _('Ulaşım') }}</h3>
+                      </div>
+                      <div class="list-single-main-item_content fl-wrap">
+                         <div class="listing-features ">
+                            <ul>
+                                <li><i class="fal {% if doc.anayol %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.anayol %} style="color: grey;"{% endif %}>{{ _('Anayol') }} </span></li>
+                                <li><i class="fal {% if doc.deniz_otobusu %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.deniz_otobusu %} style="color: grey;"{% endif %}>{{ _('Deniz Otobüsü') }} </span></li>
+                                <li><i class="fal {% if doc.iskele %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.iskele %} style="color: grey;"{% endif %}>{{ _('İskele') }} </span></li>
+                                <li><i class="fal {% if doc.minibus %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.minibus %} style="color: grey;"{% endif %}>{{ _('Minibüs') }} </span></li>
+                                <li><i class="fal {% if doc.tem %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.tem %} style="color: grey;"{% endif %}>{{ _('TEM') }} </span></li>
+                                <li><i class="fal {% if doc.avrasya_tuneli %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.avrasya_tuneli %} style="color: grey;"{% endif %}>{{ _('Avrasya Tüneli') }} </span></li>
+                                <li><i class="fal {% if doc.dolmus %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.dolmus %} style="color: grey;"{% endif %}>{{ _('Dolmuş') }} </span></li>
+                                <li><i class="fal {% if doc.marmaray %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.marmaray %} style="color: grey;"{% endif %}>{{ _('Marmaray') }} </span></li>
+                                <li><i class="fal {% if doc.durak %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.durak %} style="color: grey;"{% endif %}>{{ _('Otobüs Durağı') }} </span></li>
+                                <li><i class="fal {% if doc.tramvay %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.tramvay %} style="color: grey;"{% endif %}>{{ _('Tramvay') }} </span></li>
+                                <li><i class="fal {% if doc.kopru %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.kopru %} style="color: grey;"{% endif %}>{{ _('Boğaz Köprüleri') }} </span></li>
+                                <li><i class="fal {% if doc.e5 %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.e5 %} style="color: grey;"{% endif %}>{{ _('E-5') }} </span></li>
+                                <li><i class="fal {% if doc.metro %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.metro %} style="color: grey;"{% endif %}>{{ _('Metro') }} </span></li>
+                                <li><i class="fal {% if doc.sahil %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.sahil %} style="color: grey;"{% endif %}>{{ _('Sahil') }} </span></li>
+                                <li><i class="fal {% if doc.tren_istasyonu %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.tren_istasyonu %} style="color: grey;"{% endif %}>{{ _('Tren İstasyonu') }} </span></li>
+                                <li><i class="fal {% if doc.cadde %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.cadde %} style="color: grey;"{% endif %}>{{ _('Cadde') }} </span></li>
+                                <li><i class="fal {% if doc.havaalani %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.havaalani %} style="color: grey;"{% endif %}>{{ _('Havaalanı') }} </span></li>
+                                <li><i class="fal {% if doc.metrobus %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.metrobus %} style="color: grey;"{% endif %}>{{ _('Metrobüs') }} </span></li>
+                                <li><i class="fal {% if doc.teleferik %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.teleferik %} style="color: grey;"{% endif %}>{{ _('Teleferik') }} </span></li>
+                                <li><i class="fal {% if doc.troleybus %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.troleybus %} style="color: grey;"{% endif %}>{{ _('Troleybüs') }} </span></li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+
+                   <div class="list-single-main-item fl-wrap">
+                      <div class="list-single-main-item-title">
+                         <h3>{{ _('Manzara') }}</h3>
+                      </div>
+                      <div class="list-single-main-item_content fl-wrap">
+                         <div class="listing-features ">
+                            <ul>
+                                <li><i class="fal {% if doc.park_yesil_alan %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.park_yesil_alan %} style="color: grey;"{% endif %}>{{ _('Park & Yeşil Alan') }} </span></li>
+                                <li><i class="fal {% if doc.sehir_manzara %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.dsehir_manzaraogu %} style="color: grey;"{% endif %}>{{ _('Şehir') }} </span></li>
+                                <li><i class="fal {% if doc.gol %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.gol %} style="color: grey;"{% endif %}>{{ _('Göl') }} </span></li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+
+                   {% if doc.estate_type != 'Arazi' %}
+                   <div class="list-single-main-item fl-wrap">
+                      <div class="list-single-main-item-title">
+                         <h3>{{ _('Konut Tipi') }}</h3>
+                      </div>
+                      <div class="list-single-main-item_content fl-wrap">
+                         <div class="listing-features ">
+                            <ul>
+                                <li><i class="fal {% if doc.ara_kat %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.ara_kat %} style="color: grey;"{% endif %}>{{ _('Ara Kat') }} </span></li>
+                                <li><i class="fal {% if doc.bahceli %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.bahceli %} style="color: grey;"{% endif %}>{{ _('Bahçeli') }} </span></li>
+                                <li><i class="fal {% if doc.garaj_dukkan %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.garaj_dukkan %} style="color: grey;"{% endif %}>{{ _('Garaj/Dükkan Üstü') }} </span></li>
+                                <li><i class="fal {% if doc.ters_dubleks %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.ters_dubleks %} style="color: grey;"{% endif %}>{{ _('Ters Dubleks') }} </span></li>
+                                <li><i class="fal {% if doc.ara_kat_dubleks %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.ara_kat_dubleks %} style="color: grey;"{% endif %}>{{ _('Ara Kat Dubleksi') }} </span></li>
+                                <li><i class="fal {% if doc.cati_dubleks %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.cati_dubleks %} style="color: grey;"{% endif %}>{{ _('Çatı Dubleksi') }} </span></li>
+                                <li><i class="fal {% if doc.giris_kati %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.giris_kati %} style="color: grey;"{% endif %}>{{ _('Giriş Katı') }} </span></li>
+                                <li><i class="fal {% if doc.tripleks %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.tripleks %} style="color: grey;"{% endif %}>{{ _('Tripleks') }} </span></li>
+                                <li><i class="fal {% if doc.bahce_dubleksi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.bahce_dubleksi %} style="color: grey;"{% endif %}>{{ _('Bahçe Dubleksi') }} </span></li>
+                                <li><i class="fal {% if doc.en_ust_kat %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.en_ust_kat %} style="color: grey;"{% endif %}>{{ _('En Üst Kat') }} </span></li>
+                                <li><i class="fal {% if doc.kat_dubleksi %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.kat_dubleksi %} style="color: grey;"{% endif %}>{{ _('Kat Dubleksi') }} </span></li>
+                                <li><i class="fal {% if doc.zemin_kat %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.zemin_kat %} style="color: grey;"{% endif %}>{{ _('Zemin Kat') }} </span></li>
+                                <li><i class="fal {% if doc.bahce_kati %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.bahce_kati %} style="color: grey;"{% endif %}>{{ _('Bahçe Katı') }} </span></li>
+                                <li><i class="fal {% if doc.forleks %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.forleks %} style="color: grey;"{% endif %}>{{ _('Forleks') }} </span></li>
+                                <li><i class="fal {% if doc.mustakil_giris %}fa-check{% else %}fa-times grey {% endif %}"></i> <span{% if not doc.mustakil_giris %} style="color: grey;"{% endif %}>{{ _('Müstakil Giriş') }} </span></li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                   {% endif %}
+                   <!-- list-single-main-item end -->
+                   <!-- list-single-main-item -->
+                   {% if doc.enlem %}
+                   <div class="list-single-main-item fw-lmi fl-wrap" id="sec5">
+                      <div class="map-container mapC_vis mapC_vis2">
+                         <div id="singleMap" data-latitude="{{ doc.enlem }}" data-longitude="{{ doc.boylam }}" data-mapTitle="{{ _('Lokasyon') }}" data-infotitle="{{ _(doc.title) }}" data-infotext=" {{ doc.mahalle }} / {{ doc.ilce }}"></div>
+                         <div class="scrollContorl"></div>
+                      </div>
+                      <input id="pac-input" class="controls fl-wrap controls-mapwn" autocomplete="on" type="text" placeholder="{{ _('Ne Yakın? Okullar, Spor Salonu...') }} " value="">
+                   </div>
+                   {% endif %}
+                   <!-- list-single-main-item end -->                                            
+                   <!-- list-single-main-item -->
+                </div>
+             </div>
+          </div>
+          <!-- listing-single content end-->
+          <!-- sidebar -->
+          <div class="col-md-4">
+             <!--box-widget-->
+             <div class="box-widget fl-wrap">
+                <div class="profile-widget">
+                   <div class="profile-widget-header color-bg smpar fl-wrap">
+                      <div class="pwh_bg"></div>
+                      <div class="call-btn"><a href="tel:0212 741 44 58" class="tolt color-bg" data-microtip-position="right"  data-tooltip="Şimdi Ara"><i class="fas fa-phone-alt"></i></a></div>
+                      <div class="box-widget-menu-btn smact"><i class="far fa-ellipsis-h"></i></div>
+                      <div class="profile-widget-card">
+                         <div class="profile-widget-image">
+                            <img src="/assets/antoryum_gayrimenkul/images/loader.png" alt="">
+                         </div>
+                         <div class="profile-widget-header-title">
+                            <h4><a href="#">{{ doc.broker }}</a></h4>
+                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="profile-widget-content fl-wrap">
+                      <div class="contats-list fl-wrap">
+                         <ul class="no-list-style">
+                            {% if broker_info.phone %}<li><span><i class="fal fa-phone"></i> {{ _('Telefon') }} :</span> <a href="tel:{{ broker_info.phone }}">{{ broker_info.phone }}</a></li>{% endif %}
+                            {% if broker_info.mobile_no %}<li><span><i class="fal fa-envelope"></i> {{ _('Cep Telefonu') }} :</span> <a href="tel:{{ broker_info.mobile_no }}">{{ broker_info.mobile_no }}</a></li>{% endif %}
+                            <li><span><i class="fal fa-browser"></i> {{ _('E-posta') }} :</span> <a href="mail:{{ broker_info.email }}">{{ broker_info.email }}</a></li>
+                         </ul>
+                      </div>
+                      <div class="profile-widget-footer fl-wrap">
+                         <a href="#sec-contact" class="custom-scroll-link tolt" data-microtip-position="left"  data-tooltip="{{ _('İletişim') }}"><i class="fal fa-paper-plane"></i></a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <!--box-widget end -->
+             <!--box-widget-->
+             <div class="box-widget fl-wrap">
+                <div class="box-widget-fixed-init fl-wrap" id="sec-contact">
+                   <div class="box-widget-title fl-wrap box-widget-title-color color-bg">{{ _('Randevu Oluştur') }}</div>
+                   <div class="box-widget-content fl-wrap">
+                      <div class="custom-form">
+                         <div name="contact-property-form">
+                           <p id="contact-alert" class="alert alert-warning"
+                              style="display: none;">&nbsp;</p>
+                            <label> {{ _('Adınız Soyadınız') }}* <span class="dec-icon"><i class="fas fa-user"></i></span></label>
+                            <input   name="firstname" type="text"  value="" required>
+                            <label> {{ _('Telefon') }}* <span class="dec-icon"><i class="fas fa-phone"></i></span></label>
+                            <input   name="phone" type="text"  value="" required>
+                            <label> {{ _('E-posta') }}* <span class="dec-icon"><i class="fas fa-envelope"></i></span></label>
+                            <input   name="email" type="text"  value="" required>          
+                            <div class="row">
+                               <div class="col-sm-6">
+                                  <label>{{ _('Tarih') }} <span class="dec-icon"><i class="fas fa-calendar-check"></i></span></label>
+                                  <div class="date-container fl-wrap">
+                                     <input type="text" placeholder="" style="padding: 16px 5px 16px 60px;"     name="datepicker-here"   value=""/>                                                 
+                                  </div>
+                               </div>
+                               <div class="col-sm-6">
+                                  <label>{{ _('Saat') }}  </label>
+                                  <select data-placeholder="9 AM" name="time" class="chosen-select on-radius no-search-select" >
+                                     <option>09:00</option>
+                                     <option>10:00</option>
+                                     <option>11:00</option>
+                                     <option>12:00</option>
+                                     <option>13:00</option>
+                                     <option>14:00</option>
+                                     <option>15:00</option>
+                                     <option>16:00</option>
+                                  </select>
+                               </div>
+                            </div>
+                            <button class="btn float-btn color-bg fw-btn btn-send"> {{ _('Gönder') }}</button>
+                           </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <!--box-widget end -->                                   
+          </div>
+          <!--  sidebar end-->                            
+       </div>
+       <div class="fl-wrap limit-box"></div>
+    </div>
+ </div>
+
+ <script>
+// Copyright (c) 2022, Harpiya Software Technologies
+// MIT License. See license.txt
+
+harpiya.ready(function() {
+
+	if(harpiya.utils.get_url_arg('subject')) {
+	  $('[name="subject"]').val(harpiya.utils.get_url_arg('subject'));
+	}
+
+	$('.btn-send').off("click").on("click", function() {
+		var firstname = $('[name="firstname"]').val();
+		var phone = $('[name="phone"]').val();
+		var email = $('[name="email"]').val();
+		var date = $('[name="datepicker-here"]').val();
+		var time = $('[name="time"]').val();
+
+		if(!(firstname && email && phone)) {
+			harpiya.msgprint('{{ _("Lütfen gerekli tüm alanları doldurun! Teşekkürler") }}');
+			return false;
+		}
+
+		if(!validate_email(email)) {
+			harpiya.msgprint('{{ _("Lütfen geçerli bir e-posta adresi girin.") }}');
+			$('[name="email"]').focus();
+			return false;
+		}
+
+		$("#contact-alert").toggle(false);
+		harpiya.send_message({
+			subject: "{{ doc.title }}",
+			sender: email,
+			message: firstname + phone + date + time,
+			callback: function(r) {
+				if(r.message==="okay") {
+					harpiya.msgprint('{{ _("Mesajınız için teşekkür ederiz.") }}');
+                    harpiya.call({
+                        method: 'harpiya.client.insert',
+                        args: {
+                            doc: {doctype: 'Communication',
+                            doctype: "Communication",
+                            sender: email,
+                            subject: "{{ doc.title }}",
+                            sent_or_received: "Received",
+                            content: "Adı Soyadı: " + firstname + "\nTelefon: " + phone + "\nTarih: " + date + " " + time,
+                            status: "Open",
+                            },
+                        },
+                        callback: function(r) {
+                                    console.log(r);
+                            }
+                    });
+				} else {
+					harpiya.msgprint('{{ _("Hata oluştu") }}');
+					console.log(r.exc);
+				}
+				$(':input').val('');
+			}
+		}, this);
+		return false;
+	});
+
+});
+
+var msgprint = function(txt) {
+	if(txt) $("#contact-alert").html(txt).toggle(true);
+}
+</script>
+{% endblock %}
+

@@ -1,0 +1,24 @@
+<p>
+	{{_("Merhaba")}} {{ first_name }}{% if last_name %} {{ last_name}}{% endif %},
+</p>
+{% set site_link = "<a href='" + site_url + "'>" + site_url + "</a>" %}
+<p>{{_("{0} adresinde sizin için yeni bir hesap oluşturuldu").format(site_link)}}.</p>
+<p>{{_("Giriş kimliğiniz:")}}: <b>{{ user }}</b>
+<p>{{_("Kaydınızı tamamlamak ve yeni bir şifre belirlemek için aşağıdaki bağlantıya tıklayın")}}.</p>
+
+<p style="margin: 15px 0px;">
+	<a href="{{ link }}" rel="nofollow" class="btn btn-primary">{{ _("Kaydı Tamamla") }}</a>
+</p>
+
+{% if created_by != "Administrator" %}
+<br>
+<p style="margin-top: 15px">
+	{{_("Teşekkürler")}},<br>
+	{{ created_by }}
+</p>
+{% endif %}
+<br>
+<p>
+	{{_("Ayrıca tarayıcınızda aşağıdaki bağlantıyı kopyalayıp yapıştırabilirsiniz.r")}}<br>
+	<a href="{{ link }}">{{ link }}</a>
+</p>

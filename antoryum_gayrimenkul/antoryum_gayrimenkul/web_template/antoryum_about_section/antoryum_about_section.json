@@ -1,0 +1,89 @@
+{
+ "__unsaved": 1,
+ "creation": "2022-09-05 13:29:56.405521",
+ "docstatus": 0,
+ "doctype": "Web Template",
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Ba\u015fl\u0131k",
+   "reqd": 0
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Metin",
+   "reqd": 0
+  },
+  {
+   "fieldname": "about_image",
+   "fieldtype": "Attach Image",
+   "label": "Hakk\u0131m\u0131zda G\u00f6rseli",
+   "reqd": 0
+  },
+  {
+   "fieldname": "slogan",
+   "fieldtype": "Data",
+   "label": "Resim Slogan\u0131",
+   "reqd": 0
+  },
+  {
+   "fieldname": "slogan_subtitle",
+   "fieldtype": "Data",
+   "label": "Slogan Alt Metin",
+   "reqd": 0
+  },
+  {
+   "fieldname": "images",
+   "fieldtype": "Section Break",
+   "label": "Resimler",
+   "reqd": 0
+  },
+  {
+   "fieldname": "image_1",
+   "fieldtype": "Attach Image",
+   "label": "Resim 1",
+   "reqd": 0
+  },
+  {
+   "fieldname": "image_2",
+   "fieldtype": "Attach Image",
+   "label": "Resim 2",
+   "reqd": 0
+  },
+  {
+   "fieldname": "image_3",
+   "fieldtype": "Attach Image",
+   "label": "Resim 3",
+   "reqd": 0
+  },
+  {
+   "fieldname": "image_4",
+   "fieldtype": "Attach Image",
+   "label": "Resim 4",
+   "reqd": 0
+  },
+  {
+   "fieldname": "image_5",
+   "fieldtype": "Attach Image",
+   "label": "Resim 5",
+   "reqd": 0
+  },
+  {
+   "fieldname": "image_6",
+   "fieldtype": "Attach Image",
+   "label": "Resim 6",
+   "reqd": 0
+  }
+ ],
+ "idx": 0,
+ "modified": "2022-09-05 13:30:25.229339",
+ "modified_by": "Administrator",
+ "module": "Antoryum Gayrimenkul",
+ "name": "Antoryum About Section",
+ "owner": "Administrator",
+ "standard": 1,
+ "template": "",
+ "type": "Section"
+}

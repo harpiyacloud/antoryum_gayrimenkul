@@ -15,11 +15,27 @@ app_license = "MIT"
 # app_include_js = "/assets/antoryum_gayrimenkul/js/antoryum_gayrimenkul.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/antoryum_gayrimenkul/css/antoryum_gayrimenkul.css"
-# web_include_js = "/assets/antoryum_gayrimenkul/js/antoryum_gayrimenkul.js"
+web_include_css = [
+    "/assets/antoryum_gayrimenkul/css/plugins.css",
+    "/assets/antoryum_gayrimenkul/css/style.css",
+    "/assets/antoryum_gayrimenkul/css/color.css",
+    ]
+web_include_js =[ 
+    "/assets/antoryum_gayrimenkul/js/plugins.js",
+    "/assets/antoryum_gayrimenkul/js/scripts.js",
+    "/assets/antoryum_gayrimenkul/js/website_utils.js"
+    ]
+website_route_rules = [
+	{"from_route": "/portfoy/<category>", "to_route": "Estate"},
+]
+
+base_template_map = {
+	r"internal.*": "templates/doc.html",
+}
+
 
 # include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "antoryum_gayrimenkul/public/scss/website"
+# website_theme_scss = "antoryum_gayrimenkul/public/scss/website.bundle"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}

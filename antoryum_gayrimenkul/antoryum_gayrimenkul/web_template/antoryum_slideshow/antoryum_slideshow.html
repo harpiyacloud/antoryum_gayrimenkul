@@ -1,0 +1,25 @@
+{%- set slideshow = harpiya.get_doc('Website Slideshow', website_slideshow) -%}
+{%- set slides = slideshow.slideshow_items -%}
+{%- set slideshow_id = 'id-' + harpiya.utils.generate_hash('Slideshow', 12) -%}
+
+{{ slideshow.header or '' }}
+
+
+ <!--  section  -->
+
+    {% if slides | len > 1 %}
+    <div class="hero-slider-wrap carousel-wrap fl-wrap">
+        <div class="hero-slider carousel" >
+            <!-- hero-slider-item -->
+            {% for slide in slides %}
+            <div class="hero-slider-item fl-wrap">
+                <div class="bg"  data-bg="{{ slide.image }}"></div>
+            </div>
+            {% endfor %}
+            <!--  hero-slider-item end  -->
+        </div>
+        <div class="hs-btn hs-btn_prev color-bg swiper-button-prev"><i class="far fa-angle-left"></i></div>
+        <div class="hs-btn hs-btn_next color-bg swiper-button-next"><i class="far fa-angle-right"></i></div>
+    </div>
+    {% endif %}
+<!--  section  end-->

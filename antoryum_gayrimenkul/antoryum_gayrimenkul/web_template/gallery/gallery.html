@@ -1,0 +1,31 @@
+{%- set doc = harpiya.get_doc('Gallery', items) -%}
+{%- set images = doc.gallery_items -%}
+
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="list-single-main-media fl-wrap" id="sec2">
+                        <!-- gallery-items   -->
+                        <div class="gallery-items grid-small-pad  list-single-gallery three-coulms lightgallery">
+                            {% for i in images %}
+
+                            <div class="gallery-item ">
+                                <div class="grid-item-holder">
+                                    <div class="box-item">
+                                        <img  src="{{ i.image }}"   alt="{% if i.image_alt %} {{ i.image_alt }} {% else %} 'Antoryum Gayrimenkul' {% endif %}">
+                                        <a href="{{ i.image }}" class="gal-link popup-image"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <!-- end gallery items -->                                            
+                    </div>
+                </div>	
+            </div>
+        </div>
+    </section>
+<!--  section  end-->
+

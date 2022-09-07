@@ -1,0 +1,98 @@
+{
+ "actions": [],
+ "beta": 1,
+ "creation": "2022-09-05 17:34:50.205839",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "portfoy_title",
+  "portfoy_introduction",
+  "column_break_3",
+  "enable_social_sharing",
+  "browse_by_category",
+  "section_break_6",
+  "like_limit",
+  "column_break_8",
+  "comment_limit"
+ ],
+ "fields": [
+  {
+   "fieldname": "portfoy_title",
+   "fieldtype": "Data",
+   "label": "Portf\u00f6y Ba\u015fl\u0131\u011f\u0131"
+  },
+  {
+   "fieldname": "portfoy_introduction",
+   "fieldtype": "Small Text",
+   "label": "Portf\u00f6y Tan\u0131t\u0131m\u0131"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_social_sharing",
+   "fieldtype": "Check",
+   "label": "Sosyal Medya Payla\u015f\u0131m\u0131n\u0131 Etkinle\u015ftir"
+  },
+  {
+   "default": "0",
+   "fieldname": "browse_by_category",
+   "fieldtype": "Check",
+   "label": "Kategorilere G\u00f6re G\u00f6ster"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "like_limit",
+   "fieldtype": "Int",
+   "label": "Be\u011feni Limiti"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "comment_limit",
+   "fieldtype": "Int",
+   "label": "Yorum Limiti"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-09-05 17:34:50.205839",
+ "modified_by": "Administrator",
+ "module": "Antoryum Gayrimenkul",
+ "name": "Estate Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Website Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Blogger",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

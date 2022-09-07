@@ -1,0 +1,24 @@
+{
+ "__unsaved": 1,
+ "creation": "2022-09-05 13:05:33.823213",
+ "docstatus": 0,
+ "doctype": "Web Template",
+ "fields": [
+  {
+   "fieldname": "website_slideshow",
+   "fieldtype": "Link",
+   "label": "Website Slayt Gösterisi",
+   "options": "Website Slideshow",
+   "reqd": 0
+  }
+ ],
+ "idx": 0,
+ "modified": "2022-09-05 13:09:23.635653",
+ "modified_by": "Administrator",
+ "module": "Antoryum Gayrimenkul",
+ "name": "Antoryum Slideshow",
+ "owner": "Administrator",
+ "standard": 1,
+ "template": "",
+ "type": "Section"
+}

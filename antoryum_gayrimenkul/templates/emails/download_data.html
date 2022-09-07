@@ -1,0 +1,10 @@
+<p>{{_("Sayın {0}").format(user_name)}},</p>
+<p>{{_("Aşağıdakilerle ilişkili {0} verilerinizi indirmeniz için bir talep aldık:{1}").format(host_name, user)}}.</p>
+<p>{{_("Verilerinizi indirmek için aşağıdaki bağlantıya tıklayın")}}.</p>
+
+<p style="margin: 30px 0px;">
+    <a href="{{ link }}" rel="nofollow" class="btn btn-primary btn-sm primary-action" style="padding: 8px 20px;">{{ _("Veriyi İndir") }}</a>
+</p>
+<p style="font-size: 85%;">
+    {{_("Ayrıca bu ")}} <a href="{{ link }}">{{_("İndirme Bağlantısını")}}</a>{{_(" tarayıcınıza kopyalayıp yapışturabilirsiniz.")}}
+</p>

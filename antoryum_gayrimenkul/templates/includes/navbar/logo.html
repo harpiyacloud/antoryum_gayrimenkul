@@ -1,0 +1,12 @@
+
+<div class="logo-holder">
+    <a href="{{ url_prefix }}{{ home_page or "/" }}">
+        {%- if brand_html -%}
+            {{ brand_html }}
+        {%- elif banner_image -%}
+            <img src='{{ banner_image }}'>
+        {%- else -%}
+            <span>{{ (harpiya.get_hooks("brand_html") or [_("Anasayfa")])[0] }}</span>
+        {%- endif -%}
+    </a>
+</div>

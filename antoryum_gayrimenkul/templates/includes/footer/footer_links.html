@@ -1,0 +1,22 @@
+{% macro footer_link(item) %}
+<a href="{{ item.url | abs_url }}" {% if item.open_in_new_tab %} target="_blank" {% endif %} class="footer-link" rel="noreferrer">
+	{%- if item.icon -%}
+	<img src="{{ item.icon }}" alt="{{ item.label }}">
+	{%- else -%}
+	{{ item.label }}
+	{%- endif -%}
+</a>
+{% endmacro %}
+
+<div class="footer-widget fl-wrap">
+	<div class="footer-widget-title fl-wrap">
+		<h4>Hızlı Bağlantılar</h4>
+	</div>
+	<ul class="footer-list fl-wrap">
+		{%- for item in footer_items if item.label and not (item.parent_label or item.child_items) and not item.right %}
+		<li>
+			{{ footer_link(item) }}
+			{% endfor -%}
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,62 @@
+<!-- subscribe-wrap -->	
+<div class="subscribe-wrap fl-wrap">
+    <div class="container">
+        <div class="subscribe-container fl-wrap color-bg">
+            <div class="pwh_bg"></div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="subscribe-header">
+                        <h4>{{ _("Haber Bülteni") }}</h4>
+                        <h3>{{ _("Haber bültenimize abone olarak eklenen ilanlardan ilk siz haberdar olabilirsiniz") }}</h3>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <div class="footer-widget fl-wrap">
+                        <div class="subscribe-widget fl-wrap">
+                            <div class="subcribe-form">
+                                <div id="subscribe">
+                                    <input class="enteremail fl-wrap" name="email" id="footer-subscribe-email" placeholder="{{ _("E-posta Adresiniz") }}" spellcheck="false" type="text" aria-describedby="subscribe-button">
+                                    <button type="submit" id="subscribe-button" class="subscribe-button color-bg">  {{ _("Abone Ol") }}</button>
+                                    <label for="subscribe-email" class="subscribe-message"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- subscribe-wrap end -->	
+
+
+<script>
+    harpiya.ready(function() {
+        $("#subscribe-button").click(function() {
+    
+            if($("#footer-subscribe-email").val() && validate_email($("#footer-subscribe-email").val())) {
+                $("#footer-subscribe-email").attr('disabled', true);
+                $("#subscribe-button").html("Gönderiliyor...")
+                    .attr("disabled", true);
+                antoryum.subscribe_to_newsletter({
+                    email: $("#footer-subscribe-email").val(),
+                    callback: function(r) {
+                        if(!r.exc) {
+                            $("#subscribe-button").html(__("Kaydedildi"))
+                                .attr("disabled", true);
+                        } else {
+                            $("#subscribe-button").html(__("Hata: Geçersiz id?"))
+                                .addClass("btn-danger").attr("disabled", false);
+                            $("#footer-subscribe-email").val("").attr('disabled', false);
+                        }
+                    }
+                });
+            }
+            else
+                harpiya.msgprint(harpiya._("Lütfen geçerli bir e-posta adresi girin"))
+        });
+    });
+    </script>
+    

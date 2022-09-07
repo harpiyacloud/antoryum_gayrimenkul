@@ -1,0 +1,1554 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "autoname": "format:ILAN-{#####}",
+ "creation": "2022-09-05 22:07:54.956064",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "estate_category",
+  "estate_type",
+  "broker",
+  "route",
+  "estate_price",
+  "estate_kira",
+  "currency",
+  "read_time",
+  "adres",
+  "mahalle",
+  "ilce",
+  "il",
+  "column_break_8",
+  "published_on",
+  "published",
+  "featured",
+  "enable_email_notification",
+  "disable_likes",
+  "enlem",
+  "boylam",
+  "gallery",
+  "manset_resmi",
+  "section_break_14",
+  "content",
+  "email_sent",
+  "ilan_bilgileri_section",
+  "brut_mt2",
+  "net_mt2",
+  "mt_birim_fiyati",
+  "kat_karsiligi",
+  "oda_sayisi",
+  "banyo_sayisi",
+  "yatak_odasi",
+  "wc",
+  "bina_yasi",
+  "bina_kat_sayisi",
+  "bulundugu_kat",
+  "isitma_tipi",
+  "balkon",
+  "column_break_35",
+  "kullanim_durumu",
+  "site_icerisi",
+  "ipotek_durumu",
+  "krediye_uygunluk",
+  "yatirim",
+  "esya_durumu",
+  "depozito",
+  "aidat",
+  "cephe_section",
+  "bati",
+  "column_break_38",
+  "dogu",
+  "column_break_40",
+  "guney",
+  "column_break_42",
+  "kuzey",
+  "column_break_44",
+  "ic_ozellikler_section",
+  "adsl",
+  "yangin_alarimi",
+  "amerikan_mutfak",
+  "beyaz_esya",
+  "c_kurutma_makinesi",
+  "dusakabin",
+  "fiber",
+  "hilton_banyo",
+  "kartonpiyer",
+  "laminat",
+  "mutfak_laminat",
+  "pvc_dograma",
+  "sofben",
+  "vestiyer",
+  "ahsap_dograma",
+  "alaturka_tuvalet",
+  "ankastre_firin",
+  "boyali",
+  "camasir_makinasi",
+  "duvar_kagidi",
+  "column_break_71",
+  "giyinme_odasi",
+  "intercom_sistemi",
+  "kiler",
+  "marley",
+  "mutfak_dogalgazi",
+  "seramik_zemin",
+  "somine",
+  "wi_fi",
+  "akilli_ev",
+  "a_dograma",
+  "asans\u00f6r",
+  "bulasik_makinesi",
+  "camasir_odasi",
+  "ebeveyn_banyosu",
+  "gomme_dolap",
+  "isi_cam",
+  "klima",
+  "mobilya",
+  "panjur",
+  "column_break_93",
+  "set_ustu_ocak",
+  "teras",
+  "yuz_tanima",
+  "alarm_hirsiz",
+  "amerikan_kapi",
+  "barbeku",
+  "buzdolabi",
+  "celik_kapi",
+  "firin",
+  "diyafon",
+  "jakuzi",
+  "kuvet",
+  "mutfak_ankastre",
+  "parke_zemin",
+  "spot_aydinlatma",
+  "termosifon",
+  "dis_ozellikler",
+  "tam_saat_guvenlik",
+  "asansor",
+  "hamam",
+  "kablo_tv",
+  "mustakil_havuzlu",
+  "ses_yalitimi",
+  "tenis",
+  "yuzme_havuzu",
+  "hidrofor",
+  "kamera_sistemi",
+  "otomarik_acik",
+  "siding",
+  "uydu",
+  "buhar_odasi",
+  "isi_yalitimi",
+  "column_break_119",
+  "kapici",
+  "otopark_kapali",
+  "spor_alani",
+  "yangin_merdiveni",
+  "cocuk_oyun_parki",
+  "jenerator",
+  "kres",
+  "sauna",
+  "su_deposu",
+  "havuz_acik",
+  "muhit_section",
+  "alisveris_merkezi",
+  "denize_sifir",
+  "hastane",
+  "kilise",
+  "polis",
+  "sehir_merkezi",
+  "belediye",
+  "eczane",
+  "havra",
+  "lise",
+  "column_break_151",
+  "saglik_ocagi",
+  "universite",
+  "cami",
+  "eglence_merkezi",
+  "okul",
+  "market",
+  "pazar",
+  "cemevi",
+  "fuar",
+  "itfaye",
+  "park",
+  "spor_salonu",
+  "ulasim",
+  "anayol",
+  "deniz_otob\u00fcs\u00fc",
+  "iskele",
+  "minibus",
+  "tem",
+  "avrasya_tuneli",
+  "dolmus",
+  "marmaray",
+  "durak",
+  "tramvay",
+  "column_break_164",
+  "kopru",
+  "e5",
+  "metro",
+  "sahil",
+  "tren_istasyonu",
+  "cadde",
+  "havaalani",
+  "metrobus",
+  "teleferik",
+  "troleybus",
+  "manzara_section",
+  "bogaz",
+  "havuz",
+  "deniz",
+  "doga",
+  "column_break_180",
+  "park_yesil_alan",
+  "sehir_manzara",
+  "gol",
+  "konut_tipi",
+  "ara_kat",
+  "bahceli",
+  "garaj_dukkan",
+  "ters_dubleks",
+  "ara_kat_dubleks",
+  "cati_dubleksi",
+  "giris_kati",
+  "column_break_192",
+  "tripleks",
+  "bahce_dubleksi",
+  "en_ust_kat",
+  "kat_dubleksi",
+  "zemin_kat",
+  "bahce_kati",
+  "forleks",
+  "mustakil_giris"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Ba\u015fl\u0131k",
+   "reqd": 1
+  },
+  {
+   "fieldname": "estate_category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0130lan Kategorisi",
+   "options": "Estate Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "estate_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0130lan T\u00fcr\u00fc",
+   "options": "Kiral\u0131k\nSat\u0131l\u0131k\nArazi",
+   "reqd": 1
+  },
+  {
+   "fieldname": "broker",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Broker",
+   "options": "Broker",
+   "reqd": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Y\u00f6nlendirme",
+   "unique": 1
+  },
+  {
+   "fieldname": "estate_price",
+   "fieldtype": "Currency",
+   "label": "Fiyat",
+   "reqd": 1
+  },
+  {
+   "fieldname": "read_time",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Okuma S\u00fcresi",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "published_on",
+   "fieldtype": "Date",
+   "label": "Yay\u0131n Tarihi"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Yay\u0131nland\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "featured",
+   "fieldtype": "Check",
+   "label": "\u00d6ne \u00c7\u0131kan"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_email_notification",
+   "fieldtype": "Check",
+   "label": "E-posta Bildirimini Etkine\u015ftir"
+  },
+  {
+   "default": "0",
+   "fieldname": "disable_likes",
+   "fieldtype": "Check",
+   "label": "Be\u011feniyi Devre D\u0131\u015f\u0131 B\u0131rak"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Text Editor",
+   "label": "A\u00e7\u0131klama"
+  },
+  {
+   "default": "0",
+   "fieldname": "email_sent",
+   "fieldtype": "Check",
+   "label": "E-posta G\u00f6nder"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "ilan_bilgileri_section",
+   "fieldtype": "Section Break",
+   "label": "\u0130lan Bilgileri"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "brut_mt2",
+   "fieldtype": "Data",
+   "label": "Br\u00fct Metrekare"
+  },
+  {
+   "fieldname": "net_mt2",
+   "fieldtype": "Data",
+   "label": "Net Metrekare"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "oda_sayisi",
+   "fieldtype": "Select",
+   "label": "Oda Say\u0131s\u0131",
+   "options": "St\u00fcdyo\n1+1\n1.5+1\n201\n2+1\n2.5+1\n3+1\n3.5+1\n3+2\n4+1\n4.5+1\n4+2\n5\n5+1\n5+2\n5+3\n5+4\n6+1\n6+2\n6+3\n6+4\n7+1\n7+2\n7+3\n8+"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "banyo_sayisi",
+   "fieldtype": "Select",
+   "label": "Banyo Say\u0131s\u0131",
+   "options": "1\n2\n3\n4\n5\n6+"
+  },
+  {
+   "default": "Bilinmiyor",
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "bina_yasi",
+   "fieldtype": "Select",
+   "label": "Binan\u0131n Ya\u015f\u0131",
+   "options": "Bilinmiyor\n0 (Yeni)\n1\n2\n3\n4\n5-10\n11-15\n16-20\n21 ve \u00fczeri"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "bina_kat_sayisi",
+   "fieldtype": "Int",
+   "label": "Binan\u0131n Kat Say\u0131s\u0131"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "bulundugu_kat",
+   "fieldtype": "Data",
+   "label": "Bulundu\u011fu Kat"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "isitma_tipi",
+   "fieldtype": "Select",
+   "label": "Is\u0131tma Tipi",
+   "options": "Do\u011falgaz (Kombi)\nMerkezi (Pay \u00d6l\u00e7er)\nYerden Is\u0131tma\nSoba\nYok"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "balkon",
+   "fieldtype": "Select",
+   "label": "Balkon Durumu",
+   "options": "Var\nYok"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "kullanim_durumu",
+   "fieldtype": "Select",
+   "label": "Kullan\u0131m Durumu",
+   "options": "Bo\u015f\nKirac\u0131 Oturuyor\nEv Sahibi Oturuyor\nDolu"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "site_icerisi",
+   "fieldtype": "Select",
+   "label": "Site \u0130\u00e7erisinde",
+   "options": "Evet\nHay\u0131r"
+  },
+  {
+   "fieldname": "ipotek_durumu",
+   "fieldtype": "Select",
+   "label": "\u0130potek Durumu",
+   "options": "Var\nYok"
+  },
+  {
+   "fieldname": "krediye_uygunluk",
+   "fieldtype": "Select",
+   "label": "Krediye Uygunluk",
+   "options": "Krediye Uygun\nKrediye Uygun De\u011fil"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "esya_durumu",
+   "fieldtype": "Select",
+   "label": "E\u015fya Durumu",
+   "options": "Bo\u015f\nE\u015fyal\u0131\nK\u0131smen E\u015fyal\u0131"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "wc",
+   "fieldtype": "Select",
+   "label": "WC Say\u0131s\u0131",
+   "options": "1\n2\n3\n4\n5"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "depozito",
+   "fieldtype": "Data",
+   "label": "Depozito"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "aidat",
+   "fieldtype": "Data",
+   "label": "Aidat"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "cephe_section",
+   "fieldtype": "Section Break",
+   "label": "Cephe"
+  },
+  {
+   "default": "0",
+   "fieldname": "bati",
+   "fieldtype": "Check",
+   "label": "Bat\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "dogu",
+   "fieldtype": "Check",
+   "label": "Do\u011fu"
+  },
+  {
+   "default": "0",
+   "fieldname": "guney",
+   "fieldtype": "Check",
+   "label": "G\u00fcney"
+  },
+  {
+   "default": "0",
+   "fieldname": "kuzey",
+   "fieldtype": "Check",
+   "label": "Kuzey"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "ic_ozellikler_section",
+   "fieldtype": "Section Break",
+   "label": "\u0130\u00e7 \u00d6zellikler"
+  },
+  {
+   "default": "0",
+   "fieldname": "adsl",
+   "fieldtype": "Check",
+   "label": "ADSL"
+  },
+  {
+   "default": "0",
+   "fieldname": "yangin_alarimi",
+   "fieldtype": "Check",
+   "label": "Alarm (Yang\u0131n)"
+  },
+  {
+   "default": "0",
+   "fieldname": "amerikan_mutfak",
+   "fieldtype": "Check",
+   "label": "Amerikan Mutfak"
+  },
+  {
+   "default": "0",
+   "fieldname": "beyaz_esya",
+   "fieldtype": "Check",
+   "label": "Beyaz E\u015fya"
+  },
+  {
+   "default": "0",
+   "fieldname": "c_kurutma_makinesi",
+   "fieldtype": "Check",
+   "label": "\u00c7ama\u015f\u0131r Kurutma Makinesi"
+  },
+  {
+   "default": "0",
+   "fieldname": "dusakabin",
+   "fieldtype": "Check",
+   "label": "Du\u015fakabin"
+  },
+  {
+   "default": "0",
+   "fieldname": "fiber",
+   "fieldtype": "Check",
+   "label": "Fiber \u0130nternet"
+  },
+  {
+   "default": "0",
+   "fieldname": "hilton_banyo",
+   "fieldtype": "Check",
+   "label": "Hilton Banyo"
+  },
+  {
+   "default": "0",
+   "fieldname": "kartonpiyer",
+   "fieldtype": "Check",
+   "label": "Kartonpiyer"
+  },
+  {
+   "default": "0",
+   "fieldname": "laminat",
+   "fieldtype": "Check",
+   "label": "Laminat Zemin"
+  },
+  {
+   "default": "0",
+   "fieldname": "mutfak_laminat",
+   "fieldtype": "Check",
+   "label": "Mutfak (Laminat)"
+  },
+  {
+   "default": "0",
+   "fieldname": "pvc_dograma",
+   "fieldtype": "Check",
+   "label": "PVC Do\u011frama"
+  },
+  {
+   "default": "0",
+   "fieldname": "sofben",
+   "fieldtype": "Check",
+   "label": "\u015eofben"
+  },
+  {
+   "default": "0",
+   "fieldname": "vestiyer",
+   "fieldtype": "Check",
+   "label": "Vestiyer"
+  },
+  {
+   "default": "0",
+   "fieldname": "ahsap_dograma",
+   "fieldtype": "Check",
+   "label": "Ah\u015fap Do\u011frama"
+  },
+  {
+   "default": "0",
+   "fieldname": "alaturka_tuvalet",
+   "fieldtype": "Check",
+   "label": "Alaturka Tuvalat"
+  },
+  {
+   "default": "0",
+   "fieldname": "ankastre_firin",
+   "fieldtype": "Check",
+   "label": "Ankastre F\u0131r\u0131n"
+  },
+  {
+   "default": "0",
+   "fieldname": "boyali",
+   "fieldtype": "Check",
+   "label": "Boyal\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "camasir_makinasi",
+   "fieldtype": "Check",
+   "label": "\u00c7ama\u015f\u0131r Makinas\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "duvar_kagidi",
+   "fieldtype": "Check",
+   "label": "Duvar Ka\u011f\u0131d\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "giyinme_odasi",
+   "fieldtype": "Check",
+   "label": "Giyinme Odas\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "intercom_sistemi",
+   "fieldtype": "Check",
+   "label": "Intercom Sistemi"
+  },
+  {
+   "default": "0",
+   "fieldname": "kiler",
+   "fieldtype": "Check",
+   "label": "Kiler"
+  },
+  {
+   "default": "0",
+   "fieldname": "marley",
+   "fieldtype": "Check",
+   "label": "Marley"
+  },
+  {
+   "default": "0",
+   "fieldname": "mutfak_dogalgazi",
+   "fieldtype": "Check",
+   "label": "Mutfak Do\u011falgaz\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "seramik_zemin",
+   "fieldtype": "Check",
+   "label": "Seramik Zemin"
+  },
+  {
+   "default": "0",
+   "fieldname": "somine",
+   "fieldtype": "Check",
+   "label": "\u015e\u00f6mine"
+  },
+  {
+   "default": "0",
+   "fieldname": "wi_fi",
+   "fieldtype": "Check",
+   "label": "Wi-Fi"
+  },
+  {
+   "default": "0",
+   "fieldname": "akilli_ev",
+   "fieldtype": "Check",
+   "label": "Ak\u0131ll\u0131 Ev"
+  },
+  {
+   "default": "0",
+   "fieldname": "a_dograma",
+   "fieldtype": "Check",
+   "label": "Al\u00fcminyum Do\u011frama"
+  },
+  {
+   "default": "0",
+   "fieldname": "asans\u00f6r",
+   "fieldtype": "Check",
+   "label": "Asans\u00f6r"
+  },
+  {
+   "default": "0",
+   "fieldname": "bulasik_makinesi",
+   "fieldtype": "Check",
+   "label": "Bula\u015f\u0131k Makinesi"
+  },
+  {
+   "default": "0",
+   "fieldname": "camasir_odasi",
+   "fieldtype": "Check",
+   "label": "\u00c7ama\u015f\u0131r Odas\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "ebeveyn_banyosu",
+   "fieldtype": "Check",
+   "label": "Ebeveyn Banyosu"
+  },
+  {
+   "default": "0",
+   "fieldname": "gomme_dolap",
+   "fieldtype": "Check",
+   "label": "G\u00f6mme Dolap"
+  },
+  {
+   "default": "0",
+   "fieldname": "isi_cam",
+   "fieldtype": "Check",
+   "label": "Is\u0131cam"
+  },
+  {
+   "default": "0",
+   "fieldname": "klima",
+   "fieldtype": "Check",
+   "label": "Klima"
+  },
+  {
+   "default": "0",
+   "fieldname": "mobilya",
+   "fieldtype": "Check",
+   "label": "Mobilya"
+  },
+  {
+   "default": "0",
+   "fieldname": "panjur",
+   "fieldtype": "Check",
+   "label": "Panjur/Jaluzi"
+  },
+  {
+   "default": "0",
+   "fieldname": "set_ustu_ocak",
+   "fieldtype": "Check",
+   "label": "Set \u00dcst\u00fc Ocak"
+  },
+  {
+   "default": "0",
+   "fieldname": "teras",
+   "fieldtype": "Check",
+   "label": "Teras"
+  },
+  {
+   "default": "0",
+   "fieldname": "yuz_tanima",
+   "fieldtype": "Check",
+   "label": "Y\u00fcz Tan\u0131ma & Parmak \u0130zi"
+  },
+  {
+   "default": "0",
+   "fieldname": "alarm_hirsiz",
+   "fieldtype": "Check",
+   "label": "Alarm (H\u0131rs\u0131z)"
+  },
+  {
+   "default": "0",
+   "fieldname": "amerikan_kapi",
+   "fieldtype": "Check",
+   "label": "Amerikan Kap\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "barbeku",
+   "fieldtype": "Check",
+   "label": "Barbek\u00fc"
+  },
+  {
+   "default": "0",
+   "fieldname": "buzdolabi",
+   "fieldtype": "Check",
+   "label": "Buzdolab\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "celik_kapi",
+   "fieldtype": "Check",
+   "label": "\u00c7elik Kap\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "firin",
+   "fieldtype": "Check",
+   "label": "F\u0131r\u0131n"
+  },
+  {
+   "default": "0",
+   "fieldname": "diyafon",
+   "fieldtype": "Check",
+   "label": "G\u00f6r\u00fcnt\u00fcl\u00fc Diyafon"
+  },
+  {
+   "default": "0",
+   "fieldname": "jakuzi",
+   "fieldtype": "Check",
+   "label": "Jakuzi"
+  },
+  {
+   "default": "0",
+   "fieldname": "kuvet",
+   "fieldtype": "Check",
+   "label": "K\u00fcvet"
+  },
+  {
+   "default": "0",
+   "fieldname": "mutfak_ankastre",
+   "fieldtype": "Check",
+   "label": "Mutfak (Ankastre)"
+  },
+  {
+   "default": "0",
+   "fieldname": "parke_zemin",
+   "fieldtype": "Check",
+   "label": "Parke Zemin"
+  },
+  {
+   "default": "0",
+   "fieldname": "spot_aydinlatma",
+   "fieldtype": "Check",
+   "label": "Spot Ayd\u0131nlatma"
+  },
+  {
+   "default": "0",
+   "fieldname": "termosifon",
+   "fieldtype": "Check",
+   "label": "Termosifon"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "dis_ozellikler",
+   "fieldtype": "Section Break",
+   "label": "D\u0131\u015f \u00d6zellikler"
+  },
+  {
+   "fieldname": "column_break_38",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_40",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_42",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_44",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_71",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_93",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "asansor",
+   "fieldtype": "Check",
+   "label": "Asans\u00f6r"
+  },
+  {
+   "default": "0",
+   "fieldname": "hamam",
+   "fieldtype": "Check",
+   "label": "Hamam"
+  },
+  {
+   "default": "0",
+   "fieldname": "kablo_tv",
+   "fieldtype": "Check",
+   "label": "Kablo TV"
+  },
+  {
+   "default": "0",
+   "fieldname": "mustakil_havuzlu",
+   "fieldtype": "Check",
+   "label": "M\u00fcstakil Havuzl\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "ses_yalitimi",
+   "fieldtype": "Check",
+   "label": "Ses Yal\u0131t\u0131m\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "tenis",
+   "fieldtype": "Check",
+   "label": "Tenis Kortu"
+  },
+  {
+   "default": "0",
+   "fieldname": "yuzme_havuzu",
+   "fieldtype": "Check",
+   "label": "Y\u00fczme Havuzu (Kapal\u0131)"
+  },
+  {
+   "default": "0",
+   "fieldname": "hidrofor",
+   "fieldtype": "Check",
+   "label": "Hidrofor"
+  },
+  {
+   "default": "0",
+   "fieldname": "kamera_sistemi",
+   "fieldtype": "Check",
+   "label": "Kamera Sistemi"
+  },
+  {
+   "default": "0",
+   "fieldname": "otomarik_acik",
+   "fieldtype": "Check",
+   "label": "Otopark - A\u00e7\u0131k"
+  },
+  {
+   "default": "0",
+   "fieldname": "siding",
+   "fieldtype": "Check",
+   "label": "Siding"
+  },
+  {
+   "default": "0",
+   "fieldname": "uydu",
+   "fieldtype": "Check",
+   "label": "Uydu"
+  },
+  {
+   "default": "0",
+   "fieldname": "buhar_odasi",
+   "fieldtype": "Check",
+   "label": "Buhar Odas\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "isi_yalitimi",
+   "fieldtype": "Check",
+   "label": "Is\u0131 Yal\u0131t\u0131m\u0131"
+  },
+  {
+   "fieldname": "column_break_119",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "kapici",
+   "fieldtype": "Check",
+   "label": "Kap\u0131c\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "otopark_kapali",
+   "fieldtype": "Check",
+   "label": "Otopark - Kapal\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "spor_alani",
+   "fieldtype": "Check",
+   "label": "Spor Alan\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "yangin_merdiveni",
+   "fieldtype": "Check",
+   "label": "Yang\u0131n Merdiveni"
+  },
+  {
+   "default": "0",
+   "fieldname": "cocuk_oyun_parki",
+   "fieldtype": "Check",
+   "label": "\u00c7ocuk Oyun Park\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "jenerator",
+   "fieldtype": "Check",
+   "label": "Jenerator"
+  },
+  {
+   "default": "0",
+   "fieldname": "kres",
+   "fieldtype": "Check",
+   "label": "Kre\u015f"
+  },
+  {
+   "default": "0",
+   "fieldname": "sauna",
+   "fieldtype": "Check",
+   "label": "Sauna"
+  },
+  {
+   "default": "0",
+   "fieldname": "su_deposu",
+   "fieldtype": "Check",
+   "label": "Su Deposu"
+  },
+  {
+   "default": "0",
+   "fieldname": "havuz_acik",
+   "fieldtype": "Check",
+   "label": "Y\u00fczme Havuzu (A\u00e7\u0131k)"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "muhit_section",
+   "fieldtype": "Section Break",
+   "label": "Muhit"
+  },
+  {
+   "default": "0",
+   "fieldname": "alisveris_merkezi",
+   "fieldtype": "Check",
+   "label": "Al\u0131\u015fveri\u015f Merkezi"
+  },
+  {
+   "default": "0",
+   "fieldname": "denize_sifir",
+   "fieldtype": "Check",
+   "label": "Denize S\u0131f\u0131r"
+  },
+  {
+   "default": "0",
+   "fieldname": "hastane",
+   "fieldtype": "Check",
+   "label": "Hastane"
+  },
+  {
+   "default": "0",
+   "fieldname": "kilise",
+   "fieldtype": "Check",
+   "label": "Kilise"
+  },
+  {
+   "default": "0",
+   "fieldname": "polis",
+   "fieldtype": "Check",
+   "label": "Polis Merkezi"
+  },
+  {
+   "default": "0",
+   "fieldname": "sehir_merkezi",
+   "fieldtype": "Check",
+   "label": "\u015eehir Merkezi"
+  },
+  {
+   "default": "0",
+   "fieldname": "belediye",
+   "fieldtype": "Check",
+   "label": "Belediye"
+  },
+  {
+   "default": "0",
+   "fieldname": "eczane",
+   "fieldtype": "Check",
+   "label": "Eczane"
+  },
+  {
+   "default": "0",
+   "fieldname": "havra",
+   "fieldtype": "Check",
+   "label": "Havra"
+  },
+  {
+   "default": "0",
+   "fieldname": "lise",
+   "fieldtype": "Check",
+   "label": "Lise"
+  },
+  {
+   "default": "0",
+   "fieldname": "saglik_ocagi",
+   "fieldtype": "Check",
+   "label": "Sa\u011fl\u0131k Oca\u011f\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "universite",
+   "fieldtype": "Check",
+   "label": "\u00dcniversite"
+  },
+  {
+   "default": "0",
+   "fieldname": "cami",
+   "fieldtype": "Check",
+   "label": "Cami"
+  },
+  {
+   "default": "0",
+   "fieldname": "eglence_merkezi",
+   "fieldtype": "Check",
+   "label": "E\u011flence Merkezi"
+  },
+  {
+   "default": "0",
+   "fieldname": "okul",
+   "fieldtype": "Check",
+   "label": "\u0130lkokul-Ortaokul"
+  },
+  {
+   "default": "0",
+   "fieldname": "market",
+   "fieldtype": "Check",
+   "label": "Market"
+  },
+  {
+   "default": "0",
+   "fieldname": "pazar",
+   "fieldtype": "Check",
+   "label": "Semt Pazar\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "cemevi",
+   "fieldtype": "Check",
+   "label": "Cemevi"
+  },
+  {
+   "default": "0",
+   "fieldname": "fuar",
+   "fieldtype": "Check",
+   "label": "Fuar"
+  },
+  {
+   "default": "0",
+   "fieldname": "itfaye",
+   "fieldtype": "Check",
+   "label": "\u0130tfaye"
+  },
+  {
+   "default": "0",
+   "fieldname": "park",
+   "fieldtype": "Check",
+   "label": "Park"
+  },
+  {
+   "default": "0",
+   "fieldname": "spor_salonu",
+   "fieldtype": "Check",
+   "label": "Spor Salonu"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "ulasim",
+   "fieldtype": "Section Break",
+   "label": "Ula\u015f\u0131m"
+  },
+  {
+   "default": "0",
+   "fieldname": "anayol",
+   "fieldtype": "Check",
+   "label": "Anayol"
+  },
+  {
+   "default": "0",
+   "fieldname": "deniz_otob\u00fcs\u00fc",
+   "fieldtype": "Check",
+   "label": "Deniz Otob\u00fcs\u00fc"
+  },
+  {
+   "default": "0",
+   "fieldname": "iskele",
+   "fieldtype": "Check",
+   "label": "\u0130skele"
+  },
+  {
+   "default": "0",
+   "fieldname": "minibus",
+   "fieldtype": "Check",
+   "label": "Minib\u00fcs"
+  },
+  {
+   "default": "0",
+   "fieldname": "tem",
+   "fieldtype": "Check",
+   "label": "TEM"
+  },
+  {
+   "default": "0",
+   "fieldname": "avrasya_tuneli",
+   "fieldtype": "Check",
+   "label": "Avrasya T\u00fcneli"
+  },
+  {
+   "default": "0",
+   "fieldname": "dolmus",
+   "fieldtype": "Check",
+   "label": "Dolmu\u015f"
+  },
+  {
+   "default": "0",
+   "fieldname": "marmaray",
+   "fieldtype": "Check",
+   "label": "Marmaray"
+  },
+  {
+   "default": "0",
+   "fieldname": "durak",
+   "fieldtype": "Check",
+   "label": "Otob\u00fcs Dura\u011f\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "tramvay",
+   "fieldtype": "Check",
+   "label": "Tramvay"
+  },
+  {
+   "fieldname": "column_break_164",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "kopru",
+   "fieldtype": "Check",
+   "label": "Bo\u011faz K\u00f6pr\u00fcleri"
+  },
+  {
+   "default": "0",
+   "fieldname": "e5",
+   "fieldtype": "Check",
+   "label": "E-5"
+  },
+  {
+   "default": "0",
+   "fieldname": "metro",
+   "fieldtype": "Check",
+   "label": "Metro"
+  },
+  {
+   "default": "0",
+   "fieldname": "sahil",
+   "fieldtype": "Check",
+   "label": "Sahil"
+  },
+  {
+   "default": "0",
+   "fieldname": "tren_istasyonu",
+   "fieldtype": "Check",
+   "label": "Tren \u0130stasyonu"
+  },
+  {
+   "default": "0",
+   "fieldname": "cadde",
+   "fieldtype": "Check",
+   "label": "Cadde"
+  },
+  {
+   "default": "0",
+   "fieldname": "havaalani",
+   "fieldtype": "Check",
+   "label": "Havaalan\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "metrobus",
+   "fieldtype": "Check",
+   "label": "Metrob\u00fcs"
+  },
+  {
+   "default": "0",
+   "fieldname": "teleferik",
+   "fieldtype": "Check",
+   "label": "Teleferik"
+  },
+  {
+   "default": "0",
+   "fieldname": "troleybus",
+   "fieldtype": "Check",
+   "label": "Troleyb\u00fcs"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "manzara_section",
+   "fieldtype": "Section Break",
+   "label": "Manzara"
+  },
+  {
+   "default": "0",
+   "fieldname": "bogaz",
+   "fieldtype": "Check",
+   "label": "Ba\u011faz"
+  },
+  {
+   "default": "0",
+   "fieldname": "havuz",
+   "fieldtype": "Check",
+   "label": "Havuz"
+  },
+  {
+   "default": "0",
+   "fieldname": "deniz",
+   "fieldtype": "Check",
+   "label": "Deniz"
+  },
+  {
+   "default": "0",
+   "fieldname": "doga",
+   "fieldtype": "Check",
+   "label": "Do\u011fa"
+  },
+  {
+   "default": "0",
+   "fieldname": "park_yesil_alan",
+   "fieldtype": "Check",
+   "label": "Park & Ye\u015fil Alan"
+  },
+  {
+   "default": "0",
+   "fieldname": "sehir_manzara",
+   "fieldtype": "Check",
+   "label": "\u015eehir"
+  },
+  {
+   "default": "0",
+   "fieldname": "gol",
+   "fieldtype": "Check",
+   "label": "G\u00f6l"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "konut_tipi",
+   "fieldtype": "Section Break",
+   "label": "Konut Tipi"
+  },
+  {
+   "default": "0",
+   "fieldname": "ara_kat",
+   "fieldtype": "Check",
+   "label": "Ara Kat"
+  },
+  {
+   "default": "0",
+   "fieldname": "bahceli",
+   "fieldtype": "Check",
+   "label": "Bah\u00e7eli"
+  },
+  {
+   "default": "0",
+   "fieldname": "garaj_dukkan",
+   "fieldtype": "Check",
+   "label": "Garaj / D\u00fckkan \u00dcst\u00fc"
+  },
+  {
+   "default": "0",
+   "fieldname": "ters_dubleks",
+   "fieldtype": "Check",
+   "label": "Ters Dubleks"
+  },
+  {
+   "default": "0",
+   "fieldname": "ara_kat_dubleks",
+   "fieldtype": "Check",
+   "label": "Ara Kat Dubleks"
+  },
+  {
+   "default": "0",
+   "fieldname": "cati_dubleksi",
+   "fieldtype": "Check",
+   "label": "\u00c7at\u0131 Dubleksi"
+  },
+  {
+   "default": "0",
+   "fieldname": "giris_kati",
+   "fieldtype": "Check",
+   "label": "Giri\u015f Kat\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "tripleks",
+   "fieldtype": "Check",
+   "label": "Tripleks"
+  },
+  {
+   "default": "0",
+   "fieldname": "bahce_dubleksi",
+   "fieldtype": "Check",
+   "label": "Bah\u00e7e Dubleksi"
+  },
+  {
+   "default": "0",
+   "fieldname": "en_ust_kat",
+   "fieldtype": "Check",
+   "label": "En \u00dcst Kat"
+  },
+  {
+   "default": "0",
+   "fieldname": "kat_dubleksi",
+   "fieldtype": "Check",
+   "label": "Kat Dubleksi"
+  },
+  {
+   "default": "0",
+   "fieldname": "zemin_kat",
+   "fieldtype": "Check",
+   "label": "Zemin Kat"
+  },
+  {
+   "default": "0",
+   "fieldname": "bahce_kati",
+   "fieldtype": "Check",
+   "label": "Bah\u00e7e Kat\u0131"
+  },
+  {
+   "default": "0",
+   "fieldname": "forleks",
+   "fieldtype": "Check",
+   "label": "Forleks"
+  },
+  {
+   "default": "0",
+   "fieldname": "mustakil_giris",
+   "fieldtype": "Check",
+   "label": "M\u00fcstakil Giri\u015fli"
+  },
+  {
+   "fieldname": "column_break_180",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_192",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "adres",
+   "fieldtype": "Data",
+   "label": "Adres",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mahalle",
+   "fieldtype": "Data",
+   "label": "Mahalle",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ilce",
+   "fieldtype": "Data",
+   "label": "\u0130l\u00e7e",
+   "reqd": 1
+  },
+  {
+   "fieldname": "il",
+   "fieldtype": "Data",
+   "label": "\u0130l",
+   "reqd": 1
+  },
+  {
+   "fieldname": "enlem",
+   "fieldtype": "Data",
+   "label": "Enlem"
+  },
+  {
+   "fieldname": "boylam",
+   "fieldtype": "Data",
+   "label": "Boylam"
+  },
+  {
+   "fieldname": "gallery",
+   "fieldtype": "Link",
+   "label": "Resim Galerisi",
+   "options": "Gallery"
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "manset_resmi",
+   "fieldtype": "Attach Image",
+   "label": "Man\u015fet Resmi",
+   "reqd": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Select",
+   "label": "Para Birimi",
+   "options": "\u20ba\n\u20ac\n$",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_151",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Arazi'",
+   "fieldname": "kat_karsiligi",
+   "fieldtype": "Data",
+   "label": "Kat Kar\u015f\u0131l\u0131\u011f\u0131"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Arazi'",
+   "fieldname": "yatirim",
+   "fieldtype": "Select",
+   "label": "Yat\u0131r\u0131ma Uygunluk",
+   "options": "Yat\u0131r\u0131ma Uygun\nYat\u0131r\u0131ma Uygun De\u011fil\nBilinmiyor"
+  },
+  {
+   "fieldname": "estate_kira",
+   "fieldtype": "Currency",
+   "label": "Kira Getirisi"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "fieldname": "yatak_odasi",
+   "fieldtype": "Select",
+   "label": "Yatak Odas\u0131",
+   "options": "1\n2\n3\n4\n5\n6+"
+  },
+  {
+   "default": "0",
+   "fieldname": "tam_saat_guvenlik",
+   "fieldtype": "Check",
+   "label": "24 Saat G\u00fcvenlik"
+  },
+  {
+   "depends_on": "eval:doc.estate_type === 'Arazi'",
+   "fieldname": "mt_birim_fiyati",
+   "fieldtype": "Data",
+   "label": "M2 Birim Fiyat\u0131"
+  }
+ ],
+ "has_web_view": 1,
+ "image_field": "manset_resmi",
+ "index_web_pages_for_search": 1,
+ "is_published_field": "published",
+ "links": [],
+ "modified": "2022-09-06 16:12:22.549788",
+ "modified_by": "Administrator",
+ "module": "Antoryum Gayrimenkul",
+ "name": "Estate",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Website Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Blogger",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "portfoy",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

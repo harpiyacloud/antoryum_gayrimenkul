@@ -1,0 +1,104 @@
+<!-- section -->
+<section>
+    <div class="container">
+        <!--about-wrap -->
+        <div class="about-wrap">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="about-title ab-hero fl-wrap">
+                        {% if title %}
+                        <h2>{{ _(title) }} </h2>
+                        {% endif %}
+                    </div>
+                    <div class="services-opions fl-wrap">
+                        {%- if description %}
+                        <p>{{ _(description) }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="list-single-main-media fl-wrap" id="sec2" style="padding-top: 20px;">
+                        <!-- gallery-items   -->
+                        <div class="gallery-items  list-single-gallery three-coulms lightgallery">
+                            <!-- 1 -->
+                            {% if image_1 %}
+                            <div class="gallery-item ">
+                                <div class="grid-item-holder">
+                                    <div class="box-item">
+                                        <img  src="{{ image_1 }}"   alt="">
+                                        <a href="{{ image_1 }}" class="gal-link popup-image"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% if image_2 %}
+                            <div class="gallery-item ">
+                                <div class="grid-item-holder">
+                                    <div class="box-item">
+                                        <img  src="{{ image_2 }}"   alt="">
+                                        <a href="{{ image_2 }}" class="gal-link popup-image"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% if image_3 %}
+                            <div class="gallery-item ">
+                                <div class="grid-item-holder">
+                                    <div class="box-item">
+                                        <img  src="{{ image_3 }}"   alt="">
+                                        <a href="{{ image_3 }}" class="gal-link popup-image"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% if image_4 %}
+                            <div class="gallery-item ">
+                                <div class="grid-item-holder">
+                                    <div class="box-item">
+                                        <img  src="{{ image_4 }}"   alt="">
+                                        <a href="{{ image_4 }}" class="gal-link popup-image"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% if image_5 %}
+                            <div class="gallery-item ">
+                                <div class="grid-item-holder">
+                                    <div class="box-item">
+                                        <img  src="{{ image_5 }}"   alt="">
+                                        <a href="{{ image_5 }}" class="gal-link popup-image"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% if image_6 %}
+                            <div class="gallery-item ">
+                                <div class="grid-item-holder">
+                                    <div class="box-item">
+                                        <img  src="{{ image_6 }}"   alt="">
+                                        <a href="{{ image_6 }}" class="gal-link popup-image"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            <!-- 1 end -->
+                        </div>
+                        <!-- end gallery items -->                                            
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-6">
+                    <div class="about-img fl-wrap">
+                        {% if about_image %}
+                        <img src="{{ about_image }}" class="respimg" alt="">
+                        {% endif %}
+                        <div class="about-img-hotifer color-bg">
+                            <p>{{ _(slogan) }}</p>
+                            <h5 style="color: white;">{{ _(slogan_subtitle) }}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- about-wrap end  -->							
+    </div>
+</section>
+<!-- section end-->	

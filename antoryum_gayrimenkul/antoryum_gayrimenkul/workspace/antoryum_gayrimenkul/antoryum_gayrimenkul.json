@@ -1,0 +1,135 @@
+{
+ "charts": [
+  {
+   "chart_name": "Website \u0130statistikleri",
+   "label": "Website \u0130statistikleri"
+  }
+ ],
+ "content": "[{\"type\":\"chart\",\"data\":{\"chart_name\":\"Website \u0130statistikleri\",\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">K\u0131sayollar\u0131n\u0131z</span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0130lanlar\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0130lan Kategorisi\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Broker\",\"col\":4}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Raporlar &amp; Ara\u00e7lar</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"\u0130lanlar\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Broker\",\"col\":4}}]",
+ "creation": "2022-09-06 16:20:13.502568",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "retail",
+ "idx": 0,
+ "label": "Antoryum Gayrimenkul",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0130lanlar",
+   "link_count": 4,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0130lanlar",
+   "link_count": 0,
+   "link_to": "Estate",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0130lan Kategorisi",
+   "link_count": 0,
+   "link_to": "Estate Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0130lan Ayarlar\u0131",
+   "link_count": 0,
+   "link_to": "Estate Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Galeriler",
+   "link_count": 0,
+   "link_to": "Gallery",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Broker",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Kullan\u0131c\u0131lar",
+   "link_count": 0,
+   "link_to": "User",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Broker",
+   "link_count": 0,
+   "link_to": "Broker",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2022-09-06 16:40:21.397707",
+ "modified_by": "Administrator",
+ "module": "Antoryum Gayrimenkul",
+ "name": "Antoryum Gayrimenkul",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "format": "{} Yay\u0131nland\u0131",
+   "label": "\u0130lanlar",
+   "link_to": "Estate",
+   "stats_filter": "{\"published\":[\"=\",1]}",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "format": "{} Yay\u0131nland\u0131",
+   "label": "\u0130lan Kategorisi",
+   "link_to": "Estate Category",
+   "stats_filter": "{\"published\":[\"=\",1]}",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "format": "{} Etkin",
+   "label": "Broker",
+   "link_to": "Broker",
+   "stats_filter": "{\"disabled\":[\"=\",0]}",
+   "type": "DocType"
+  }
+ ],
+ "title": "Antoryum Gayrimenkul"
+}

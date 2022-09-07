@@ -1,0 +1,137 @@
+{% extends "templates/web.html" %}
+
+{% block header %}
+<section class="hidden-section single-par2  " data-scrollax-parent="true">
+	<div class="bg-wrap bg-parallax-wrap-gradien">
+		<div class="bg par-elem "  data-bg="/assets/antoryum_gayrimenkul/images/ofis/12.jpg" data-scrollax="properties: { translateY: '30%' }"></div>
+	</div>
+	<div class="container">
+		<div class="section-title center-align big-title">
+			<h2><span>{{ _("İletişim") }}</span></h2>
+		</div>
+		<div class="scroll-down-wrap">
+			<div class="mousey">
+				<div class="scroller"></div>
+			</div>
+			<span>{{ _("Keşfetmek için Aşağı Kaydırın") }}</span>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block page_content %}
+<section class="gray-bg small-padding">
+	<div class="container">
+		<div class="row">
+			<!-- services-item -->
+			{% if email_id %}
+			<div class="col-md-4">
+				<div class="services-item fl-wrap">
+					<i class="fal fa-envelope"></i>
+					<h4>{{ _("E-posta Adreslerimiz") }} <span><img src="/assets/antoryum_gayrimenkul/images/loader.png" width="25px" /></span></h4>
+					<a href="mailto:{{ email_id }}" class="serv-link sl-b">{{ email_id }}</a>
+				</div>
+			</div>
+			{% endif %}
+			<!-- services-item  end-->
+			<!-- services-item -->
+			{% if phone %}
+			<div class="col-md-4">
+				<div class="services-item fl-wrap">
+					<i class="fal fa-phone-rotary"></i>
+					<h4>{{ _("Telefon Numaraları") }} <span><img src="/assets/antoryum_gayrimenkul/images/loader.png" width="25px" /></span></h4>
+					<a href="tel:{{ phone }}" class="serv-link sl-b">{{ phone }}</a>
+					{% if whatsapp %}
+					<br>
+					<a href="tel:{{ whatsapp }}" class="serv-link sl-b">{{ whatsapp }}</a>
+					{% endif %}
+				</div>
+			</div>
+			{% endif %}
+			<!-- services-item  end-->
+			<!-- services-item -->
+			{% if address_title %}
+			<div class="col-md-4">
+				<div class="services-item fl-wrap">
+					<i class="fal fa-map-marked"></i>
+					<h4>{{ _("Adres") }} <span><img src="/assets/antoryum_gayrimenkul/images/loader.png" width="25px" /></span></h4>
+					<a href="#" class="serv-link sl-b">{% if address_line1 %} {{ address_line1 }}<br>{% endif %}{% if address_line2 %} No:17 A-2 {% endif %} {% if city %} {{ city }}/ {% endif %}{% if state %}{{ state }}{% endif %}</a>
+				</div>
+			</div>
+			{% endif %}
+			<!-- services-item  end-->								
+		</div>
+		<div class="clearfix"></div>
+		<div class="contacts-opt fl-wrap">
+			<div class="contact-social">
+				<span class="cs-title">{{ _("Sosyal Medyada Biz") }}: </span>
+				<ul>
+					{%- if contact.facebook -%}
+					<li><a href="{{ contact.facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+					{%- endif -%}
+					{%- if contact.twitter -%}
+					<li><a href="{{ contact.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+					{%- endif -%}
+					{%- if contact.instagram -%}
+					<li><a href="{{ contact.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+					{%- endif -%}
+					{%- if contact.youtube -%}
+					<li><a href="{{ contact.youtube }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
+					{%- endif -%}
+					{%- if contact.linkedin -%}
+					<li><a href="{{ contact.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+					{%- endif -%}
+				</ul>
+			</div>
+			<a href="#" class="btn small-btn float-btn color-bg cf_btn">{{ _("Mesaj Yazın") }}</a>
+		</div>
+		<!--box-widget  -->			
+		<div class="box-widget">
+			<div class="box-widget-title single_bwt fl-wrap   ">{{ _("Ofis Konumu") }}</div>
+			<!--box-widget end-->
+		</div>
+		<!--box-widget-->
+		<div class="box-widget fl-wrap">
+			<div class="map-widget contacts-map fl-wrap">
+				<div class="map-container mapC_vis">
+					<div id="singleMap" data-latitude="40.9977268" data-longitude="28.6317157"   data-infotitle="Antoryum Gayrimenkul" data-infotext="Adnan Kahveci Mh. Dora Park 5 Site No:17 A-2 Beylikdüzü/İstanbul"></div>
+					<div class="scrollContorl"></div>
+				</div>
+			</div>
+		</div>
+		<!--box-widget end --> 									
+	</div>
+</section>
+
+
+<div class="contact-form-wrap">
+	<div class="contact-form-container">
+		<div class="contact-form-main fl-wrap">
+			<div class="contact-form-header">
+				<h4>İletişime Geçin</h4>
+				<span class="close-contact-form"><i class="fal fa-times"></i></span>
+				<p id="contact-alert" class="alert alert-warning"
+				style="display: none;">&nbsp;</p>
+			</div>
+			<div id="contact-form" class="contact-form fl-wrap">
+				<div id="message"></div>
+				<form  class="custom-form" name="contactform" id="contactform">
+					<fieldset>
+						<label>{{ _("Adınız Soyadınız") }}* <span class="dec-icon"><i class="fas fa-user"></i></span></label>
+						<input type="text" name="name" id="name" placeholder="Adınız Soyadınız*" value=""/>
+						<label>{{ _('E-posta adresiniz') }}* <span class="dec-icon"><i class="fas fa-envelope"></i></span></label>
+						<input type="text"  name="email" id="email" placeholder="E-posta Adresiniz*" value=""/>
+						<textarea name="message"  id="message" cols="40" rows="3" placeholder="{{ _('Mesajınız') }}:"></textarea>
+					</fieldset>
+					<button class="btn float-btn color-bg btn-send" style="margin-top:15px;">{{ _("Mesajı Gönder") }}</button>
+				</form>
+			</div>
+			<!-- contact form  end--> 					
+		</div>
+	</div>
+	<div class="contact-form-overlay"></div>
+</div>
+<script>
+	{% include "templates/includes/contact.js" %}
+</script>
+{% endblock %}

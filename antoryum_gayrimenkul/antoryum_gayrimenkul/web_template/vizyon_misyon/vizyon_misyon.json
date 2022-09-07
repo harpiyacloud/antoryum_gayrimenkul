@@ -1,0 +1,41 @@
+{
+ "__unsaved": 1,
+ "creation": "2022-09-05 16:00:50.583205",
+ "docstatus": 0,
+ "doctype": "Web Template",
+ "fields": [
+  {
+   "fieldname": "title_1",
+   "fieldtype": "Data",
+   "label": "Ba\u015fl\u0131k 1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "text_1",
+   "fieldtype": "Text",
+   "label": "Metin 1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title_2",
+   "fieldtype": "Data",
+   "label": "Ba\u015fl\u0131k 2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "text_2",
+   "fieldtype": "Text",
+   "label": "Metin 2",
+   "reqd": 1
+  }
+ ],
+ "idx": 0,
+ "modified": "2022-09-05 16:05:09.634431",
+ "modified_by": "Administrator",
+ "module": "Antoryum Gayrimenkul",
+ "name": "Vizyon Misyon",
+ "owner": "Administrator",
+ "standard": 1,
+ "template": "",
+ "type": "Section"
+}

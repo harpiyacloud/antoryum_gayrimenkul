@@ -1,0 +1,12 @@
+<p>{{_("Sayın Kullanıcı,")}}</p>
+<p>{{_("Aşağıdakilerle ilişkili {0} verisinin silinmesi için bir talep aldık: {1}").format(host_name, email)}}.</p>
+<p>{{_("Bu işlem verilerinizi kalıcı olarak kaldıracaktır.")}}</b>
+<p>{{_("İsteğinizi doğrulamak için aşağıdaki bağlantıya tıklayın")}}.</p>
+
+<p style="margin: 30px 0px;">
+    <a href="{{ link }}" rel="nofollow" class="btn btn-primary btn-sm primary-action" style="padding: 8px 20px;">{{ _("İsteği Onayla") }}</a>
+</p>
+<p style="font-size: 85%;">
+    {% set verification_link = '<a href="{{ link }}"> {0} </a>'.format(_("Doğrulama Bağlantısı")) %}
+    {{_("{0} bağlantısını tarayıcınıza kopyalayıp yapıştırabilirsiniz.").format(verification_link) }}
+</p>

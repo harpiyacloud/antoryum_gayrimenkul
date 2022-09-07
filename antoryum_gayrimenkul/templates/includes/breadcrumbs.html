@@ -1,0 +1,29 @@
+{%- if not no_breadcrumbs and parents -%}
+<div class="breadcrumbs fw-breadcrumbs sp-brd fl-wrap">
+	<div class="container">
+		<div class="breadcrumbs-list">
+			<div class="breadcrumb-list">
+				{%- set parents = parents[-3:] %}
+				{% set count = (parents | length) + 1 %}
+				{% for parent in parents %}
+					<a itemprop="item" href="{{ url_prefix }}{{ parent.route | abs_url }}" itemprop="url">
+							<span itemprop="name">{{ parent.title or parent.label or parent.name or "" }}</span>
+							<meta itemprop="position" content="{{ loop.index }}" />
+					</a>
+				{% endfor %}
+					<span itemprop="item">
+						<span itemprop="name">{{ title }}</span>
+						<meta itemprop="position" content="{{ count }}"/>
+					</span>
+	</div>			
+		</div>
+		<div class="share-holder hid-share">
+			<a href="#" class="share-btn showshare sfcs">  <i class="fas fa-share-alt"></i>  {{ _("Paylaş") }}   </a>
+			<div class="share-container  isShare"></div>
+		</div>
+	</div>
+</div>
+
+
+{%- endif -%}
+
