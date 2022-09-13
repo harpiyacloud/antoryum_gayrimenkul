@@ -55,7 +55,7 @@
 				<div class="services-item fl-wrap">
 					<i class="fal fa-map-marked"></i>
 					<h4>{{ _("Adres") }} <span><img src="/assets/antoryum_gayrimenkul/images/loader.png" width="25px" /></span></h4>
-					<a href="#" class="serv-link sl-b">{% if address_line1 %} {{ address_line1 }}<br>{% endif %}{% if address_line2 %} No:17 A-2 {% endif %} {% if city %} {{ city }}/ {% endif %}{% if state %}{{ state }}{% endif %}</a>
+					<a href="#" class="serv-link sl-b">{% if address_line1 %} {{ address_line1 }}<br>{% endif %}{% if address_line2 %} {{ _(address_line2) }}{% endif %} {% if city %} {{ city }}/ {% endif %}{% if state %}{{ state }}{% endif %}</a>
 				</div>
 			</div>
 			{% endif %}
@@ -66,20 +66,20 @@
 			<div class="contact-social">
 				<span class="cs-title">{{ _("Sosyal Medyada Biz") }}: </span>
 				<ul>
-					{%- if contact.facebook -%}
-					<li><a href="{{ contact.facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+					{%- if facebook -%}
+					<li><a href="{{ facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
 					{%- endif -%}
 					{%- if contact.twitter -%}
-					<li><a href="{{ contact.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="{{ twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
 					{%- endif -%}
 					{%- if contact.instagram -%}
-					<li><a href="{{ contact.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+					<li><a href="{{ instagram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
 					{%- endif -%}
 					{%- if contact.youtube -%}
-					<li><a href="{{ contact.youtube }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
+					<li><a href="{{ youtube }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
 					{%- endif -%}
 					{%- if contact.linkedin -%}
-					<li><a href="{{ contact.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+					<li><a href="{{ linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 					{%- endif -%}
 				</ul>
 			</div>
@@ -90,16 +90,16 @@
 			<div class="box-widget-title single_bwt fl-wrap   ">{{ _("Ofis Konumu") }}</div>
 			<!--box-widget end-->
 		</div>
-		<!--box-widget-->
+		{% if maps_iframe %}
 		<div class="box-widget fl-wrap">
 			<div class="map-widget contacts-map fl-wrap">
 				<div class="map-container mapC_vis">
-					<div id="singleMap" data-latitude="40.9977268" data-longitude="28.6317157"   data-infotitle="Antoryum Gayrimenkul" data-infotext="Adnan Kahveci Mh. Dora Park 5 Site No:17 A-2 Beylikdüzü/İstanbul"></div>
-					<div class="scrollContorl"></div>
-				</div>
+					{{ maps_iframe }}
+				</div>	
 			</div>
 		</div>
-		<!--box-widget end --> 									
+		<!--box-widget end --> 	
+		{% endif %}								
 	</div>
 </section>
 
