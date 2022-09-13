@@ -1,51 +1,46 @@
-<section >
-    <div class="container">
-        <!-- section-title -->
-        <div class="section-title st-center fl-wrap">
-            <h4>{{ _(title) }}</h4>
-            <h2>{{ _(subtitle) }}</h2>
-        </div>
-        <!-- section-title end -->
-        <div class="clearfix"></div>
-        <div class="row">
-            {% for member in teams %}
-            {%- set broker = harpiya.get_doc('Broker', member.team_member) -%}
-            {%- set user = harpiya.get_doc('User', broker.user) -%}
-            <div class="col-md-3">
-                <!--  agent card item -->
-                <div class="listing-item">
-                <article class="geodir-category-listing fl-wrap">
-                    <div class="geodir-category-img fl-wrap  agent_card">
-                        <a href="#" class="geodir-category-img_item">
-                            <img src="{{ broker.avatar }}" alt="">
-                        </a>
-                        <!-- <div class="agent-card-social fl-wrap">
-                            <ul>
-                                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="https://twitter.com/AntoryumInsaat" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="https://www.instagram.com/antoryuminsaat/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="https://www.youtube.com/channel/UC0K5CwN_jbctMAhUI4C_Mjg" target="_blank"><i class="fab fa-youtube"></i></a></li>
-                                <li><a href="https://www.linkedin.com/company/antoryuminsaat/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>-->
-                    </div>
-                    <div class="geodir-category-content fl-wrap">
-                        <div class="agent_card-title fl-wrap">
-                            <h4><a href="#" >{{ broker.full_name }}</a></h4>
-                            <h5><a href="#">{{ broker.info }}</a></h5>
-                        </div>
-                        <div class="geodir-category-footer fl-wrap">
-                            <a href="mailto:{{ user.email }}" class="tolt ftr-btn" data-microtip-position="left" data-tooltip="{{ _('Mesaj Gönder') }}"><i class="fal fa-envelope"></i></a>
-                            {% if user.mobile_no %}
-                            <a href="tel:{{ user.mobile_no }}" class="tolt ftr-btn" data-microtip-position="left" data-tooltip="{{ _('Şimdi Ara') }}"><i class="fal fa-phone"></i></a>	
-                            {% endif %}
-                        </div>
-                    </div>
-                </article>
-                </div>
-                <!--  agent card item end -->
+<div class="section-title st-center fl-wrap">
+    <h4>{{ _(title) }}</h4>
+    <h2>{{ _(subtitle) }}</h2>
+</div>
+<!-- section-title end -->
+<div class="clearfix"></div>
+<div class="row">
+    {% for member in teams %}
+    {%- set broker = harpiya.get_doc('Broker', member.team_member) -%}
+    {%- set user = harpiya.get_doc('User', broker.user) -%}
+    <div class="col-md-3">
+        <!--  agent card item -->
+        <div class="listing-item">
+        <article class="geodir-category-listing fl-wrap">
+            <div class="geodir-category-img fl-wrap  agent_card">
+                <a href="#" class="geodir-category-img_item">
+                    <img src="{{ broker.avatar }}" alt="">
+                </a>
+                <!-- <div class="agent-card-social fl-wrap">
+                    <ul>
+                        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://twitter.com/AntoryumInsaat" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/antoryuminsaat/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UC0K5CwN_jbctMAhUI4C_Mjg" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/antoryuminsaat/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>-->
             </div>
-            {% endfor %}
-
+            <div class="geodir-category-content fl-wrap">
+                <div class="agent_card-title fl-wrap">
+                    <h4><a href="#" >{{ broker.full_name }}</a></h4>
+                    <h5><a href="#">{{ broker.info }}</a></h5>
+                </div>
+                <div class="geodir-category-footer fl-wrap">
+                    <a href="mailto:{{ user.email }}" class="tolt ftr-btn" data-microtip-position="left" data-tooltip="{{ _('Mesaj Gönder') }}"><i class="fal fa-envelope"></i></a>
+                    {% if user.mobile_no %}
+                    <a href="tel:{{ user.mobile_no }}" class="tolt ftr-btn" data-microtip-position="left" data-tooltip="{{ _('Şimdi Ara') }}"><i class="fal fa-phone"></i></a>	
+                    {% endif %}
+                </div>
+            </div>
+        </article>
+        </div>
+        <!--  agent card item end -->
     </div>
-</section>
+    {% endfor %}
+</div>
