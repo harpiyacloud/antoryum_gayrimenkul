@@ -135,7 +135,6 @@ class Estate(WebsiteGenerator):
 def get_list_context(context=None):
 	list_context = harpiya._dict(
 		get_list=get_estate_list,
-		no_breadcrumbs=True,
 		hide_filters=True,
 		# show_search = True,
 		title=_("Portföy"),
@@ -151,11 +150,11 @@ def get_list_context(context=None):
 
 	elif harpiya.local.form_dict.broker:
 		broker = harpiya.db.get_value("Broker", {"name": harpiya.local.form_dict.broker}, "full_name")
-		list_context.sub_title = _("Posts by {0}").format(broker)
+		list_context.sub_title = _("Gönderen {0}").format(broker)
 		list_context.title = broker
 
 	elif harpiya.local.form_dict.txt:
-		list_context.sub_title = _('Filtered by "{0}"').format(sanitize_html(harpiya.local.form_dict.txt))
+		list_context.sub_title = _('Filtre "{0}"').format(sanitize_html(harpiya.local.form_dict.txt))
 
 	if list_context.sub_title:
 		list_context.parents = [{"name": _("Anasayfa"), "route": "/"}, {"name": _("Portöy"), "route": "/portfoy"}]

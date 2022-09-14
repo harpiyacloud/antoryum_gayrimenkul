@@ -175,9 +175,11 @@ function initHomeradar() {
         arrows: false,
         fade: false,
         dots: true,
-        adaptiveHeight: true,
+        adaptiveHeight: false,
         asNavFor: '.slider-nav'
 
+    }).on('setPosition', function (event, slick) {
+        slick.$slides.css('height', 500 + 'px');
     });
     $('.slider-nav').slick({
         slidesToShow: 4,
