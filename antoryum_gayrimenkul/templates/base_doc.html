@@ -53,73 +53,13 @@
 	</script>
 </head>
 <body harpiya-session-status="{{ 'logged-in' if harpiya.session.user != 'Guest' else 'logged-out'}}" data-path="{{ path | e }}" {%- if template and template.endswith('.md') %} harpiya-content-type="markdown" {%- endif %} class="{{ body_class or ''}}">
-	<div class="loader-wrap">
-		<div class="loader-inner">
-			<img src="/assets/antoryum_gayrimenkul/images/loader.png" />
-		</div>
-	</div>
-	<div id="main">
-		{% include "public/icons/timeless/icons.svg" %}
-		{%- block banner -%}
-			{% include "templates/includes/banner_extension.html" ignore missing %}
+	{% include "public/icons/timeless/icons.svg" %}
 
-			{% if banner_html -%}
-			{{ banner_html or "" }}
-			{%- endif %}
-		{%- endblock -%}
-		<header class="main-header">
 
-			{% include "templates/includes/navbar/logo.html" %}
+	{% block content %}
+		{{ content }}
+	{% endblock %}
 
-			<div class="nav-button-wrap color-bg nvminit">
-				<div class="nav-button">
-					<span></span><span></span><span></span>
-				</div>
-			</div>
-
-			<div class="header-opt_btn tolt" data-microtip-position="bottom"  data-tooltip="Dil Seçimi">
-				<span><i class="fal fa-globe"></i></span>
-			</div>
-
-			{%- block navbar -%}
-				{{ web_block(
-					navbar_template or 'Standard Navbar',
-					values=_context_dict,
-					add_container=0,
-					add_top_padding=0,
-					add_bottom_padding=0,
-				) }}
-			{%- endblock -%}
-
-			<div class="header-opt-modal novis_header-mod">
-				<div class="header-opt-modal-container hopmc_init">
-					<div class="header-opt-modal-item lang-item fl-wrap hide" id="language-switcher">
-						<select class="form-control"></select>
-					</div>
-				</div>
-			</div>	   
-
-		</header>
-		<div id="wrapper">
-			<!-- content -->	
-			<div class="content">
-				<!--  section  -->
-				{% block content %}
-					{{ content }}
-				{% endblock %}
-
-				{%- block footer -%}
-					{{ web_block(
-						footer_template or 'Standard Footer',
-						values=_context_dict,
-						add_container=0,
-						add_top_padding=0,
-						add_bottom_padding=0
-					) }}
-				{%- endblock -%}
-			</div>
-		</div>
-	</div>
 	{% block base_scripts %}
 	<!-- js should be loaded in body! -->
 	<script>
