@@ -126,7 +126,7 @@
                    </div>
                    {% endif %}
                    <!-- inline-facts end -->
-                   {% if yatak_odasi >0 and doc.estate_type != 'Arazi'  %}
+                   {% if yatak_odasi > "0" and doc.estate_type != 'Arazi'  %}
                    <!-- inline-facts -->
                    <div class="inline-facts-wrap">
                       <div class="inline-facts">
@@ -137,7 +137,7 @@
                    </div>
                    {% endif %}
                    <!-- inline-facts end -->
-                   {% if doc.banyo_sayisi > 0 and doc.estate_type != 'Arazi' %}
+                   {% if doc.banyo_sayisi > "0" and doc.estate_type != 'Arazi' %}
                    <!-- inline-facts -->
                    <div class="inline-facts-wrap">
                       <div class="inline-facts">
@@ -186,11 +186,11 @@
                                  {% if doc.net_mt2 %}<li><span>{{ _('mt2 (net)') }}:</span>{{ doc.net_mt2 }}</li>{% endif %}
                                  {% if doc.oda_sayisi %}<li><span>{{ _('Oda Sayısı') }}:</span>{{ doc.oda_sayisi }}</li>{% endif %}
                                  {% if doc.bina_yasi %}<li><span>{{ _('Bina Yaşı') }}:</span>{{ doc.bina_yasi }}</li>{% endif %}
-                                 {% if doc.bulundugu_kat > 0 %}<li><span>{{ _('Bulunduğu Kat') }}:</span>{{ doc.bulundugu_kat }}</li>{% endif %}
+                                 {% if doc.bulundugu_kat %}<li><span>{{ _('Bulunduğu Kat') }}:</span>{{ doc.bulundugu_kat }}</li>{% endif %}
                                  {% if doc.bina_kat_sayisi %}<li><span>{{ _('Kat Sayısı') }}:</span>{{ doc.bina_kat_sayisi }}</li>{% endif %}
                                  {% if doc.isitma_tipi %}<li><span>{{ _('Isıtma') }}:</span>{{ doc.isitma_tipi }}</li>{% endif %}
-                                 {% if doc.banyo_sayisi > 0 %}<li><span>{{ _('Banyo Sayısı') }}:</span>{{ doc.banyo_sayisi }}</li>{% endif %}
-                                 {% if doc.wc > 0 %}<li><span>{{ _('WC Sayısı') }}:</span>{{ doc.wc }}</li>{% endif %}
+                                 {% if doc.banyo_sayisi > "0" %}<li><span>{{ _('Banyo Sayısı') }}:</span>{{ doc.banyo_sayisi }}</li>{% endif %}
+                                 {% if doc.wc > "0" %}<li><span>{{ _('WC Sayısı') }}:</span>{{ doc.wc }}</li>{% endif %}
                                  {% if doc.balkon == "Var" %}<li><span>{{ _('Balkon Durumu') }}:</span>{{ doc.balkon }}</li>{% endif %}
                                  {% if doc.kullanim_durumu %}<li><span>{{ _('Kullanım Durumu') }}:</span>{{ doc.kullanim_durumu }}</li>{% endif %}
                                  {% if doc.esya_durumu %}<li><span>{{ _('Eşya Durumu') }}:</span>{{ doc.esya_durumu }}</li>{% endif %}
