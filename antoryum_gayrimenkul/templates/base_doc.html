@@ -54,7 +54,23 @@
 </head>
 <body harpiya-session-status="{{ 'logged-in' if harpiya.session.user != 'Guest' else 'logged-out'}}" data-path="{{ path | e }}" {%- if template and template.endswith('.md') %} harpiya-content-type="markdown" {%- endif %} class="{{ body_class or ''}}">
 	{% include "public/icons/timeless/icons.svg" %}
+	{%- block banner -%}
+		{% include "templates/includes/banner_extension.html" ignore missing %}
 
+		{% if banner_html -%}
+		{{ banner_html or "" }}
+		{%- endif %}
+	{%- endblock -%}
+
+	{%- block navbar -%}
+		{{ web_block(
+			navbar_template or 'Standard Navbar',
+			values=_context_dict,
+			add_container=0,
+			add_top_padding=0,
+			add_bottom_padding=0,
+		) }}
+	{%- endblock -%}
 
 	{% block content %}
 		{{ content }}
