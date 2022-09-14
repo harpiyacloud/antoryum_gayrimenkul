@@ -20,12 +20,12 @@
    "default": "0",
    "fieldname": "disabled",
    "fieldtype": "Check",
-   "label": "Devre D\u0131\u015f\u0131"
+   "label": "Devre Dışı"
   },
   {
    "fieldname": "short_name",
    "fieldtype": "Data",
-   "label": "K\u0131sa \u0130sim",
+   "label": "Kısa İsim",
    "reqd": 1,
    "unique": 1
   },
@@ -39,13 +39,14 @@
   {
    "fieldname": "user",
    "fieldtype": "Link",
-   "label": "Kullan\u0131c\u0131",
-   "options": "User"
+   "label": "Kullanıcı",
+   "options": "User",
+   "reqd": 1
   },
   {
    "fieldname": "info",
    "fieldtype": "Data",
-   "label": "G\u00f6rev",
+   "label": "Görev",
    "reqd": 1
   },
   {
@@ -63,7 +64,7 @@
  "index_web_pages_for_search": 1,
  "links": [],
  "max_attachments": 1,
- "modified": "2022-09-05 17:46:25.369288",
+ "modified": "2022-09-14 11:15:41.432491",
  "modified_by": "Administrator",
  "module": "Antoryum Gayrimenkul",
  "name": "Broker",

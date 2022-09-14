@@ -1,6 +1,25 @@
 {% extends "templates/web.html" %}
-{% block title %}{{ title or _("Ürünler") }}{% endblock %}
+{% block title %}{{ _(title) or _("Portföy") }}{% endblock %}
 {% block hero %}{% endblock %}
+
+{% block header %}
+<section class="hidden-section single-par2  " data-scrollax-parent="true">
+	<div class="bg-wrap bg-parallax-wrap-gradien">
+		<div class="bg par-elem "  data-bg="/assets/antoryum_gayrimenkul/images/ofis/12.jpg" data-scrollax="properties: { translateY: '30%' }"></div>
+	</div>
+	<div class="container">
+		<div class="section-title center-align big-title">
+			<h2><span>{{ _(title) or _("Portföy") }}</span></h2>
+		</div>
+		<div class="scroll-down-wrap">
+			<div class="mousey">
+				<div class="scroller"></div>
+			</div>
+			<span>{{ _("Keşfetmek için Aşağı Kaydırın") }}</span>
+		</div>
+	</div>
+</section>
+{% endblock %}
 
 {% block page_content %}
 <section class="gray-bg small-padding">

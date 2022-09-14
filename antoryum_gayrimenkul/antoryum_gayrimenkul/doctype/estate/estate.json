@@ -97,7 +97,7 @@
   "wi_fi",
   "akilli_ev",
   "a_dograma",
-  "asans\u00f6r",
+  "asansör",
   "bulasik_makinesi",
   "camasir_odasi",
   "ebeveyn_banyosu",
@@ -176,7 +176,7 @@
   "spor_salonu",
   "ulasim",
   "anayol",
-  "deniz_otob\u00fcs\u00fc",
+  "deniz_otobüsü",
   "iskele",
   "minibus",
   "tem",
@@ -227,7 +227,7 @@
   {
    "fieldname": "title",
    "fieldtype": "Data",
-   "label": "Ba\u015fl\u0131k",
+   "label": "Başlık",
    "reqd": 1
   },
   {
@@ -235,7 +235,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "\u0130lan Kategorisi",
+   "label": "İlan Kategorisi",
    "options": "Estate Category",
    "reqd": 1
   },
@@ -244,8 +244,8 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "\u0130lan T\u00fcr\u00fc",
-   "options": "Kiral\u0131k\nSat\u0131l\u0131k\nArazi",
+   "label": "İlan Türü",
+   "options": "Kiralık\nSatılık\nArazi",
    "reqd": 1
   },
   {
@@ -260,7 +260,7 @@
   {
    "fieldname": "route",
    "fieldtype": "Data",
-   "label": "Y\u00f6nlendirme",
+   "label": "Yönlendirme",
    "unique": 1
   },
   {
@@ -273,7 +273,7 @@
    "fieldname": "read_time",
    "fieldtype": "Int",
    "hidden": 1,
-   "label": "Okuma S\u00fcresi",
+   "label": "Okuma Süresi",
    "read_only": 1
   },
   {
@@ -283,31 +283,31 @@
   {
    "fieldname": "published_on",
    "fieldtype": "Date",
-   "label": "Yay\u0131n Tarihi"
+   "label": "Yayın Tarihi"
   },
   {
    "default": "0",
    "fieldname": "published",
    "fieldtype": "Check",
-   "label": "Yay\u0131nland\u0131"
+   "label": "Yayınlandı"
   },
   {
    "default": "0",
    "fieldname": "featured",
    "fieldtype": "Check",
-   "label": "\u00d6ne \u00c7\u0131kan"
+   "label": "Öne Çıkan"
   },
   {
    "default": "0",
    "fieldname": "enable_email_notification",
    "fieldtype": "Check",
-   "label": "E-posta Bildirimini Etkine\u015ftir"
+   "label": "E-posta Bildirimini Etkineştir"
   },
   {
    "default": "0",
    "fieldname": "disable_likes",
    "fieldtype": "Check",
-   "label": "Be\u011feniyi Devre D\u0131\u015f\u0131 B\u0131rak"
+   "label": "Beğeniyi Devre Dışı Bırak"
   },
   {
    "fieldname": "section_break_14",
@@ -316,134 +316,134 @@
   {
    "fieldname": "content",
    "fieldtype": "Text Editor",
-   "label": "A\u00e7\u0131klama"
+   "label": "Açıklama"
   },
   {
    "default": "0",
    "fieldname": "email_sent",
    "fieldtype": "Check",
-   "label": "E-posta G\u00f6nder"
+   "label": "E-posta Gönder"
   },
   {
    "collapsible": 1,
    "fieldname": "ilan_bilgileri_section",
    "fieldtype": "Section Break",
-   "label": "\u0130lan Bilgileri"
+   "label": "İlan Bilgileri"
   },
   {
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "brut_mt2",
-   "fieldtype": "Data",
-   "label": "Br\u00fct Metrekare"
+   "fieldtype": "Int",
+   "label": "Brüt Metrekare"
   },
   {
    "fieldname": "net_mt2",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Net Metrekare"
   },
   {
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "oda_sayisi",
    "fieldtype": "Select",
-   "label": "Oda Say\u0131s\u0131",
-   "options": "St\u00fcdyo\n1+1\n1.5+1\n201\n2+1\n2.5+1\n3+1\n3.5+1\n3+2\n4+1\n4.5+1\n4+2\n5\n5+1\n5+2\n5+3\n5+4\n6+1\n6+2\n6+3\n6+4\n7+1\n7+2\n7+3\n8+"
+   "label": "Oda Sayısı",
+   "options": "Stüdyo\n1\n1+1\n1.5+1\n201\n2+1\n2.5+1\n3+1\n3.5+1\n3+2\n4+1\n4.5+1\n4+2\n5\n5+1\n5+2\n5+3\n5+4\n6+1\n6+2\n6+3\n6+4\n7+1\n7+2\n7+3\n8+"
   },
   {
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "banyo_sayisi",
    "fieldtype": "Select",
-   "label": "Banyo Say\u0131s\u0131",
-   "options": "1\n2\n3\n4\n5\n6+"
+   "label": "Banyo Sayısı",
+   "options": "0\n1\n2\n3\n4\n5\n6+"
   },
   {
    "default": "Bilinmiyor",
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "bina_yasi",
    "fieldtype": "Select",
-   "label": "Binan\u0131n Ya\u015f\u0131",
-   "options": "Bilinmiyor\n0 (Yeni)\n1\n2\n3\n4\n5-10\n11-15\n16-20\n21 ve \u00fczeri"
+   "label": "Binanın Yaşı",
+   "options": "Bilinmiyor\n0 (Yeni)\n1\n2\n3\n4\n5-10\n11-15\n16-20\n21 ve üzeri"
   },
   {
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "bina_kat_sayisi",
    "fieldtype": "Int",
-   "label": "Binan\u0131n Kat Say\u0131s\u0131"
+   "label": "Binanın Kat Sayısı"
   },
   {
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "bulundugu_kat",
    "fieldtype": "Data",
-   "label": "Bulundu\u011fu Kat"
+   "label": "Bulunduğu Kat"
   },
   {
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "isitma_tipi",
    "fieldtype": "Select",
-   "label": "Is\u0131tma Tipi",
-   "options": "Do\u011falgaz (Kombi)\nMerkezi (Pay \u00d6l\u00e7er)\nYerden Is\u0131tma\nSoba\nYok"
+   "label": "Isıtma Tipi",
+   "options": "Doğalgaz (Kombi)\nMerkezi (Pay Ölçer)\nYerden Isıtma\nSoba\nYok"
   },
   {
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "balkon",
    "fieldtype": "Select",
    "label": "Balkon Durumu",
    "options": "Var\nYok"
   },
   {
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "kullanim_durumu",
    "fieldtype": "Select",
-   "label": "Kullan\u0131m Durumu",
-   "options": "Bo\u015f\nKirac\u0131 Oturuyor\nEv Sahibi Oturuyor\nDolu"
+   "label": "Kullanım Durumu",
+   "options": "Boş\nKiracı Oturuyor\nEv Sahibi Oturuyor\nDolu"
   },
   {
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "site_icerisi",
    "fieldtype": "Select",
-   "label": "Site \u0130\u00e7erisinde",
-   "options": "Evet\nHay\u0131r"
+   "label": "Site İçerisinde",
+   "options": "Evet\nHayır"
   },
   {
    "fieldname": "ipotek_durumu",
    "fieldtype": "Select",
-   "label": "\u0130potek Durumu",
+   "label": "İpotek Durumu",
    "options": "Var\nYok"
   },
   {
    "fieldname": "krediye_uygunluk",
    "fieldtype": "Select",
    "label": "Krediye Uygunluk",
-   "options": "Krediye Uygun\nKrediye Uygun De\u011fil"
+   "options": "Krediye Uygun\nKrediye Uygun Değil"
   },
   {
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "esya_durumu",
    "fieldtype": "Select",
-   "label": "E\u015fya Durumu",
-   "options": "Bo\u015f\nE\u015fyal\u0131\nK\u0131smen E\u015fyal\u0131"
+   "label": "Eşya Durumu",
+   "options": "Boş\nEşyalı\nKısmen Eşyalı"
   },
   {
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "wc",
    "fieldtype": "Select",
-   "label": "WC Say\u0131s\u0131",
-   "options": "1\n2\n3\n4\n5"
+   "label": "WC Sayısı",
+   "options": "0\n1\n2\n3\n4\n5"
   },
   {
-   "depends_on": "eval:doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Kiralık'",
    "fieldname": "depozito",
    "fieldtype": "Data",
    "label": "Depozito"
   },
   {
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "aidat",
    "fieldtype": "Data",
    "label": "Aidat"
   },
   {
    "collapsible": 1,
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "cephe_section",
    "fieldtype": "Section Break",
    "label": "Cephe"
@@ -452,19 +452,19 @@
    "default": "0",
    "fieldname": "bati",
    "fieldtype": "Check",
-   "label": "Bat\u0131"
+   "label": "Batı"
   },
   {
    "default": "0",
    "fieldname": "dogu",
    "fieldtype": "Check",
-   "label": "Do\u011fu"
+   "label": "Doğu"
   },
   {
    "default": "0",
    "fieldname": "guney",
    "fieldtype": "Check",
-   "label": "G\u00fcney"
+   "label": "Güney"
   },
   {
    "default": "0",
@@ -474,10 +474,10 @@
   },
   {
    "collapsible": 1,
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "ic_ozellikler_section",
    "fieldtype": "Section Break",
-   "label": "\u0130\u00e7 \u00d6zellikler"
+   "label": "İç Özellikler"
   },
   {
    "default": "0",
@@ -489,7 +489,7 @@
    "default": "0",
    "fieldname": "yangin_alarimi",
    "fieldtype": "Check",
-   "label": "Alarm (Yang\u0131n)"
+   "label": "Alarm (Yangın)"
   },
   {
    "default": "0",
@@ -501,25 +501,25 @@
    "default": "0",
    "fieldname": "beyaz_esya",
    "fieldtype": "Check",
-   "label": "Beyaz E\u015fya"
+   "label": "Beyaz Eşya"
   },
   {
    "default": "0",
    "fieldname": "c_kurutma_makinesi",
    "fieldtype": "Check",
-   "label": "\u00c7ama\u015f\u0131r Kurutma Makinesi"
+   "label": "Çamaşır Kurutma Makinesi"
   },
   {
    "default": "0",
    "fieldname": "dusakabin",
    "fieldtype": "Check",
-   "label": "Du\u015fakabin"
+   "label": "Duşakabin"
   },
   {
    "default": "0",
    "fieldname": "fiber",
    "fieldtype": "Check",
-   "label": "Fiber \u0130nternet"
+   "label": "Fiber İnternet"
   },
   {
    "default": "0",
@@ -549,13 +549,13 @@
    "default": "0",
    "fieldname": "pvc_dograma",
    "fieldtype": "Check",
-   "label": "PVC Do\u011frama"
+   "label": "PVC Doğrama"
   },
   {
    "default": "0",
    "fieldname": "sofben",
    "fieldtype": "Check",
-   "label": "\u015eofben"
+   "label": "Şofben"
   },
   {
    "default": "0",
@@ -567,7 +567,7 @@
    "default": "0",
    "fieldname": "ahsap_dograma",
    "fieldtype": "Check",
-   "label": "Ah\u015fap Do\u011frama"
+   "label": "Ahşap Doğrama"
   },
   {
    "default": "0",
@@ -579,31 +579,31 @@
    "default": "0",
    "fieldname": "ankastre_firin",
    "fieldtype": "Check",
-   "label": "Ankastre F\u0131r\u0131n"
+   "label": "Ankastre Fırın"
   },
   {
    "default": "0",
    "fieldname": "boyali",
    "fieldtype": "Check",
-   "label": "Boyal\u0131"
+   "label": "Boyalı"
   },
   {
    "default": "0",
    "fieldname": "camasir_makinasi",
    "fieldtype": "Check",
-   "label": "\u00c7ama\u015f\u0131r Makinas\u0131"
+   "label": "Çamaşır Makinası"
   },
   {
    "default": "0",
    "fieldname": "duvar_kagidi",
    "fieldtype": "Check",
-   "label": "Duvar Ka\u011f\u0131d\u0131"
+   "label": "Duvar Kağıdı"
   },
   {
    "default": "0",
    "fieldname": "giyinme_odasi",
    "fieldtype": "Check",
-   "label": "Giyinme Odas\u0131"
+   "label": "Giyinme Odası"
   },
   {
    "default": "0",
@@ -627,7 +627,7 @@
    "default": "0",
    "fieldname": "mutfak_dogalgazi",
    "fieldtype": "Check",
-   "label": "Mutfak Do\u011falgaz\u0131"
+   "label": "Mutfak Doğalgazı"
   },
   {
    "default": "0",
@@ -639,7 +639,7 @@
    "default": "0",
    "fieldname": "somine",
    "fieldtype": "Check",
-   "label": "\u015e\u00f6mine"
+   "label": "Şömine"
   },
   {
    "default": "0",
@@ -651,31 +651,31 @@
    "default": "0",
    "fieldname": "akilli_ev",
    "fieldtype": "Check",
-   "label": "Ak\u0131ll\u0131 Ev"
+   "label": "Akıllı Ev"
   },
   {
    "default": "0",
    "fieldname": "a_dograma",
    "fieldtype": "Check",
-   "label": "Al\u00fcminyum Do\u011frama"
+   "label": "Alüminyum Doğrama"
   },
   {
    "default": "0",
-   "fieldname": "asans\u00f6r",
+   "fieldname": "asansör",
    "fieldtype": "Check",
-   "label": "Asans\u00f6r"
+   "label": "Asansör"
   },
   {
    "default": "0",
    "fieldname": "bulasik_makinesi",
    "fieldtype": "Check",
-   "label": "Bula\u015f\u0131k Makinesi"
+   "label": "Bulaşık Makinesi"
   },
   {
    "default": "0",
    "fieldname": "camasir_odasi",
    "fieldtype": "Check",
-   "label": "\u00c7ama\u015f\u0131r Odas\u0131"
+   "label": "Çamaşır Odası"
   },
   {
    "default": "0",
@@ -687,13 +687,13 @@
    "default": "0",
    "fieldname": "gomme_dolap",
    "fieldtype": "Check",
-   "label": "G\u00f6mme Dolap"
+   "label": "Gömme Dolap"
   },
   {
    "default": "0",
    "fieldname": "isi_cam",
    "fieldtype": "Check",
-   "label": "Is\u0131cam"
+   "label": "Isıcam"
   },
   {
    "default": "0",
@@ -717,7 +717,7 @@
    "default": "0",
    "fieldname": "set_ustu_ocak",
    "fieldtype": "Check",
-   "label": "Set \u00dcst\u00fc Ocak"
+   "label": "Set Üstü Ocak"
   },
   {
    "default": "0",
@@ -729,49 +729,49 @@
    "default": "0",
    "fieldname": "yuz_tanima",
    "fieldtype": "Check",
-   "label": "Y\u00fcz Tan\u0131ma & Parmak \u0130zi"
+   "label": "Yüz Tanıma & Parmak İzi"
   },
   {
    "default": "0",
    "fieldname": "alarm_hirsiz",
    "fieldtype": "Check",
-   "label": "Alarm (H\u0131rs\u0131z)"
+   "label": "Alarm (Hırsız)"
   },
   {
    "default": "0",
    "fieldname": "amerikan_kapi",
    "fieldtype": "Check",
-   "label": "Amerikan Kap\u0131"
+   "label": "Amerikan Kapı"
   },
   {
    "default": "0",
    "fieldname": "barbeku",
    "fieldtype": "Check",
-   "label": "Barbek\u00fc"
+   "label": "Barbekü"
   },
   {
    "default": "0",
    "fieldname": "buzdolabi",
    "fieldtype": "Check",
-   "label": "Buzdolab\u0131"
+   "label": "Buzdolabı"
   },
   {
    "default": "0",
    "fieldname": "celik_kapi",
    "fieldtype": "Check",
-   "label": "\u00c7elik Kap\u0131"
+   "label": "Çelik Kapı"
   },
   {
    "default": "0",
    "fieldname": "firin",
    "fieldtype": "Check",
-   "label": "F\u0131r\u0131n"
+   "label": "Fırın"
   },
   {
    "default": "0",
    "fieldname": "diyafon",
    "fieldtype": "Check",
-   "label": "G\u00f6r\u00fcnt\u00fcl\u00fc Diyafon"
+   "label": "Görüntülü Diyafon"
   },
   {
    "default": "0",
@@ -783,7 +783,7 @@
    "default": "0",
    "fieldname": "kuvet",
    "fieldtype": "Check",
-   "label": "K\u00fcvet"
+   "label": "Küvet"
   },
   {
    "default": "0",
@@ -801,7 +801,7 @@
    "default": "0",
    "fieldname": "spot_aydinlatma",
    "fieldtype": "Check",
-   "label": "Spot Ayd\u0131nlatma"
+   "label": "Spot Aydınlatma"
   },
   {
    "default": "0",
@@ -811,10 +811,10 @@
   },
   {
    "collapsible": 1,
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "dis_ozellikler",
    "fieldtype": "Section Break",
-   "label": "D\u0131\u015f \u00d6zellikler"
+   "label": "Dış Özellikler"
   },
   {
    "fieldname": "column_break_38",
@@ -844,7 +844,7 @@
    "default": "0",
    "fieldname": "asansor",
    "fieldtype": "Check",
-   "label": "Asans\u00f6r"
+   "label": "Asansör"
   },
   {
    "default": "0",
@@ -862,13 +862,13 @@
    "default": "0",
    "fieldname": "mustakil_havuzlu",
    "fieldtype": "Check",
-   "label": "M\u00fcstakil Havuzl\u0131"
+   "label": "Müstakil Havuzlı"
   },
   {
    "default": "0",
    "fieldname": "ses_yalitimi",
    "fieldtype": "Check",
-   "label": "Ses Yal\u0131t\u0131m\u0131"
+   "label": "Ses Yalıtımı"
   },
   {
    "default": "0",
@@ -880,7 +880,7 @@
    "default": "0",
    "fieldname": "yuzme_havuzu",
    "fieldtype": "Check",
-   "label": "Y\u00fczme Havuzu (Kapal\u0131)"
+   "label": "Yüzme Havuzu (Kapalı)"
   },
   {
    "default": "0",
@@ -898,7 +898,7 @@
    "default": "0",
    "fieldname": "otomarik_acik",
    "fieldtype": "Check",
-   "label": "Otopark - A\u00e7\u0131k"
+   "label": "Otopark - Açık"
   },
   {
    "default": "0",
@@ -916,13 +916,13 @@
    "default": "0",
    "fieldname": "buhar_odasi",
    "fieldtype": "Check",
-   "label": "Buhar Odas\u0131"
+   "label": "Buhar Odası"
   },
   {
    "default": "0",
    "fieldname": "isi_yalitimi",
    "fieldtype": "Check",
-   "label": "Is\u0131 Yal\u0131t\u0131m\u0131"
+   "label": "Isı Yalıtımı"
   },
   {
    "fieldname": "column_break_119",
@@ -932,31 +932,31 @@
    "default": "0",
    "fieldname": "kapici",
    "fieldtype": "Check",
-   "label": "Kap\u0131c\u0131"
+   "label": "Kapıcı"
   },
   {
    "default": "0",
    "fieldname": "otopark_kapali",
    "fieldtype": "Check",
-   "label": "Otopark - Kapal\u0131"
+   "label": "Otopark - Kapalı"
   },
   {
    "default": "0",
    "fieldname": "spor_alani",
    "fieldtype": "Check",
-   "label": "Spor Alan\u0131"
+   "label": "Spor Alanı"
   },
   {
    "default": "0",
    "fieldname": "yangin_merdiveni",
    "fieldtype": "Check",
-   "label": "Yang\u0131n Merdiveni"
+   "label": "Yangın Merdiveni"
   },
   {
    "default": "0",
    "fieldname": "cocuk_oyun_parki",
    "fieldtype": "Check",
-   "label": "\u00c7ocuk Oyun Park\u0131"
+   "label": "Çocuk Oyun Parkı"
   },
   {
    "default": "0",
@@ -968,7 +968,7 @@
    "default": "0",
    "fieldname": "kres",
    "fieldtype": "Check",
-   "label": "Kre\u015f"
+   "label": "Kreş"
   },
   {
    "default": "0",
@@ -986,11 +986,11 @@
    "default": "0",
    "fieldname": "havuz_acik",
    "fieldtype": "Check",
-   "label": "Y\u00fczme Havuzu (A\u00e7\u0131k)"
+   "label": "Yüzme Havuzu (Açık)"
   },
   {
    "collapsible": 1,
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "muhit_section",
    "fieldtype": "Section Break",
    "label": "Muhit"
@@ -999,13 +999,13 @@
    "default": "0",
    "fieldname": "alisveris_merkezi",
    "fieldtype": "Check",
-   "label": "Al\u0131\u015fveri\u015f Merkezi"
+   "label": "Alışveriş Merkezi"
   },
   {
    "default": "0",
    "fieldname": "denize_sifir",
    "fieldtype": "Check",
-   "label": "Denize S\u0131f\u0131r"
+   "label": "Denize Sıfır"
   },
   {
    "default": "0",
@@ -1029,7 +1029,7 @@
    "default": "0",
    "fieldname": "sehir_merkezi",
    "fieldtype": "Check",
-   "label": "\u015eehir Merkezi"
+   "label": "Şehir Merkezi"
   },
   {
    "default": "0",
@@ -1059,13 +1059,13 @@
    "default": "0",
    "fieldname": "saglik_ocagi",
    "fieldtype": "Check",
-   "label": "Sa\u011fl\u0131k Oca\u011f\u0131"
+   "label": "Sağlık Ocağı"
   },
   {
    "default": "0",
    "fieldname": "universite",
    "fieldtype": "Check",
-   "label": "\u00dcniversite"
+   "label": "Üniversite"
   },
   {
    "default": "0",
@@ -1077,13 +1077,13 @@
    "default": "0",
    "fieldname": "eglence_merkezi",
    "fieldtype": "Check",
-   "label": "E\u011flence Merkezi"
+   "label": "Eğlence Merkezi"
   },
   {
    "default": "0",
    "fieldname": "okul",
    "fieldtype": "Check",
-   "label": "\u0130lkokul-Ortaokul"
+   "label": "İlkokul-Ortaokul"
   },
   {
    "default": "0",
@@ -1095,7 +1095,7 @@
    "default": "0",
    "fieldname": "pazar",
    "fieldtype": "Check",
-   "label": "Semt Pazar\u0131"
+   "label": "Semt Pazarı"
   },
   {
    "default": "0",
@@ -1113,7 +1113,7 @@
    "default": "0",
    "fieldname": "itfaye",
    "fieldtype": "Check",
-   "label": "\u0130tfaye"
+   "label": "İtfaye"
   },
   {
    "default": "0",
@@ -1131,7 +1131,7 @@
    "collapsible": 1,
    "fieldname": "ulasim",
    "fieldtype": "Section Break",
-   "label": "Ula\u015f\u0131m"
+   "label": "Ulaşım"
   },
   {
    "default": "0",
@@ -1141,21 +1141,21 @@
   },
   {
    "default": "0",
-   "fieldname": "deniz_otob\u00fcs\u00fc",
+   "fieldname": "deniz_otobüsü",
    "fieldtype": "Check",
-   "label": "Deniz Otob\u00fcs\u00fc"
+   "label": "Deniz Otobüsü"
   },
   {
    "default": "0",
    "fieldname": "iskele",
    "fieldtype": "Check",
-   "label": "\u0130skele"
+   "label": "İskele"
   },
   {
    "default": "0",
    "fieldname": "minibus",
    "fieldtype": "Check",
-   "label": "Minib\u00fcs"
+   "label": "Minibüs"
   },
   {
    "default": "0",
@@ -1167,13 +1167,13 @@
    "default": "0",
    "fieldname": "avrasya_tuneli",
    "fieldtype": "Check",
-   "label": "Avrasya T\u00fcneli"
+   "label": "Avrasya Tüneli"
   },
   {
    "default": "0",
    "fieldname": "dolmus",
    "fieldtype": "Check",
-   "label": "Dolmu\u015f"
+   "label": "Dolmuş"
   },
   {
    "default": "0",
@@ -1185,7 +1185,7 @@
    "default": "0",
    "fieldname": "durak",
    "fieldtype": "Check",
-   "label": "Otob\u00fcs Dura\u011f\u0131"
+   "label": "Otobüs Durağı"
   },
   {
    "default": "0",
@@ -1201,7 +1201,7 @@
    "default": "0",
    "fieldname": "kopru",
    "fieldtype": "Check",
-   "label": "Bo\u011faz K\u00f6pr\u00fcleri"
+   "label": "Boğaz Köprüleri"
   },
   {
    "default": "0",
@@ -1225,7 +1225,7 @@
    "default": "0",
    "fieldname": "tren_istasyonu",
    "fieldtype": "Check",
-   "label": "Tren \u0130stasyonu"
+   "label": "Tren İstasyonu"
   },
   {
    "default": "0",
@@ -1237,13 +1237,13 @@
    "default": "0",
    "fieldname": "havaalani",
    "fieldtype": "Check",
-   "label": "Havaalan\u0131"
+   "label": "Havaalanı"
   },
   {
    "default": "0",
    "fieldname": "metrobus",
    "fieldtype": "Check",
-   "label": "Metrob\u00fcs"
+   "label": "Metrobüs"
   },
   {
    "default": "0",
@@ -1255,7 +1255,7 @@
    "default": "0",
    "fieldname": "troleybus",
    "fieldtype": "Check",
-   "label": "Troleyb\u00fcs"
+   "label": "Troleybüs"
   },
   {
    "collapsible": 1,
@@ -1267,7 +1267,7 @@
    "default": "0",
    "fieldname": "bogaz",
    "fieldtype": "Check",
-   "label": "Ba\u011faz"
+   "label": "Bağaz"
   },
   {
    "default": "0",
@@ -1285,29 +1285,29 @@
    "default": "0",
    "fieldname": "doga",
    "fieldtype": "Check",
-   "label": "Do\u011fa"
+   "label": "Doğa"
   },
   {
    "default": "0",
    "fieldname": "park_yesil_alan",
    "fieldtype": "Check",
-   "label": "Park & Ye\u015fil Alan"
+   "label": "Park & Yeşil Alan"
   },
   {
    "default": "0",
    "fieldname": "sehir_manzara",
    "fieldtype": "Check",
-   "label": "\u015eehir"
+   "label": "Şehir"
   },
   {
    "default": "0",
    "fieldname": "gol",
    "fieldtype": "Check",
-   "label": "G\u00f6l"
+   "label": "Göl"
   },
   {
    "collapsible": 1,
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "konut_tipi",
    "fieldtype": "Section Break",
    "label": "Konut Tipi"
@@ -1322,13 +1322,13 @@
    "default": "0",
    "fieldname": "bahceli",
    "fieldtype": "Check",
-   "label": "Bah\u00e7eli"
+   "label": "Bahçeli"
   },
   {
    "default": "0",
    "fieldname": "garaj_dukkan",
    "fieldtype": "Check",
-   "label": "Garaj / D\u00fckkan \u00dcst\u00fc"
+   "label": "Garaj / Dükkan Üstü"
   },
   {
    "default": "0",
@@ -1346,13 +1346,13 @@
    "default": "0",
    "fieldname": "cati_dubleksi",
    "fieldtype": "Check",
-   "label": "\u00c7at\u0131 Dubleksi"
+   "label": "Çatı Dubleksi"
   },
   {
    "default": "0",
    "fieldname": "giris_kati",
    "fieldtype": "Check",
-   "label": "Giri\u015f Kat\u0131"
+   "label": "Giriş Katı"
   },
   {
    "default": "0",
@@ -1364,13 +1364,13 @@
    "default": "0",
    "fieldname": "bahce_dubleksi",
    "fieldtype": "Check",
-   "label": "Bah\u00e7e Dubleksi"
+   "label": "Bahçe Dubleksi"
   },
   {
    "default": "0",
    "fieldname": "en_ust_kat",
    "fieldtype": "Check",
-   "label": "En \u00dcst Kat"
+   "label": "En Üst Kat"
   },
   {
    "default": "0",
@@ -1388,7 +1388,7 @@
    "default": "0",
    "fieldname": "bahce_kati",
    "fieldtype": "Check",
-   "label": "Bah\u00e7e Kat\u0131"
+   "label": "Bahçe Katı"
   },
   {
    "default": "0",
@@ -1400,7 +1400,7 @@
    "default": "0",
    "fieldname": "mustakil_giris",
    "fieldtype": "Check",
-   "label": "M\u00fcstakil Giri\u015fli"
+   "label": "Müstakil Girişli"
   },
   {
    "fieldname": "column_break_180",
@@ -1425,13 +1425,13 @@
   {
    "fieldname": "ilce",
    "fieldtype": "Data",
-   "label": "\u0130l\u00e7e",
+   "label": "İlçe",
    "reqd": 1
   },
   {
    "fieldname": "il",
    "fieldtype": "Data",
-   "label": "\u0130l",
+   "label": "İl",
    "reqd": 1
   },
   {
@@ -1457,14 +1457,14 @@
   {
    "fieldname": "manset_resmi",
    "fieldtype": "Attach Image",
-   "label": "Man\u015fet Resmi",
+   "label": "Manşet Resmi",
    "reqd": 1
   },
   {
    "fieldname": "currency",
    "fieldtype": "Select",
    "label": "Para Birimi",
-   "options": "\u20ba\n\u20ac\n$",
+   "options": "₺\n€\n$",
    "reqd": 1
   },
   {
@@ -1475,14 +1475,14 @@
    "depends_on": "eval:doc.estate_type === 'Arazi'",
    "fieldname": "kat_karsiligi",
    "fieldtype": "Data",
-   "label": "Kat Kar\u015f\u0131l\u0131\u011f\u0131"
+   "label": "Kat Karşılığı"
   },
   {
    "depends_on": "eval:doc.estate_type === 'Arazi'",
    "fieldname": "yatirim",
    "fieldtype": "Select",
-   "label": "Yat\u0131r\u0131ma Uygunluk",
-   "options": "Yat\u0131r\u0131ma Uygun\nYat\u0131r\u0131ma Uygun De\u011fil\nBilinmiyor"
+   "label": "Yatırıma Uygunluk",
+   "options": "Yatırıma Uygun\nYatırıma Uygun Değil\nBilinmiyor"
   },
   {
    "fieldname": "estate_kira",
@@ -1490,23 +1490,23 @@
    "label": "Kira Getirisi"
   },
   {
-   "depends_on": "eval:doc.estate_type === 'Sat\u0131l\u0131k' || doc.estate_type === 'Kiral\u0131k'",
+   "depends_on": "eval:doc.estate_type === 'Satılık' || doc.estate_type === 'Kiralık'",
    "fieldname": "yatak_odasi",
    "fieldtype": "Select",
-   "label": "Yatak Odas\u0131",
+   "label": "Yatak Odası",
    "options": "1\n2\n3\n4\n5\n6+"
   },
   {
    "default": "0",
    "fieldname": "tam_saat_guvenlik",
    "fieldtype": "Check",
-   "label": "24 Saat G\u00fcvenlik"
+   "label": "24 Saat Güvenlik"
   },
   {
    "depends_on": "eval:doc.estate_type === 'Arazi'",
    "fieldname": "mt_birim_fiyati",
-   "fieldtype": "Data",
-   "label": "M2 Birim Fiyat\u0131"
+   "fieldtype": "Float",
+   "label": "M2 Birim Fiyatı"
   }
  ],
  "has_web_view": 1,
@@ -1514,7 +1514,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2022-09-06 16:12:22.549788",
+ "modified": "2022-09-14 11:15:21.974020",
  "modified_by": "Administrator",
  "module": "Antoryum Gayrimenkul",
  "name": "Estate",
