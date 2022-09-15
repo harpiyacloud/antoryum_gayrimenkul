@@ -152,7 +152,7 @@ blockquote p {
 }
 .container {
 	max-width: 1224px;
-	width: 92%;
+	width: 100%;
 	margin: 0 auto;
 	position: relative;
 	z-index: 5;
@@ -7504,4 +7504,5 @@ section.single-par2  .scroll-down-wrap{
 	font-family: 'Antoryum';
     font-weight: bold;
     font-style: normal;	
+	font-size: 28px !important;
 }
