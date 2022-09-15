@@ -12,55 +12,42 @@
       "group_title": "Broker",
       "group_items": [
         {
-          "title": "Genel Bakış",
+          "title": "Broker Ekleme",
           "route": "/internal/broker/overview"
+        },
+        {
+          "title": "Kullanıcı Ekleme",
+          "route": "/internal/broker/add_user"
         }
       ]
     },
     {
-      "group_title": "Local Infrastructure",
+      "group_title": "İlanlar",
       "group_items": [
         {
-          "title": "Overview",
-          "route": "/internal/infrastructure/overview"
+          "title": "İlan Ekleme",
+          "route": "/internal/estate/overview"
+        },
+        {
+          "title": "İlan Kategorisi Ekleme",
+          "route": "/internal/estate/add_category"
+        },
+        {
+          "title": "İlan Galerisi Ekleme",
+          "route": "/internal/estate/add_gallery"
         }
       ]
     },
     {
-      "group_title": "Server",
+      "group_title": "Dil Yönetimi",
       "group_items": [
         {
-          "title": "Server Setup",
-          "route": "/internal/servers/server-setup"
+          "title": "Dil Aktif/Pasif Etme",
+          "route": "/internal/language/overview"
         },
         {
-          "title": "Proxy Server Setup",
-          "route": "/internal/servers/proxy-server-setup"
-        },
-        {
-          "title": "Database Server Setup",
-          "route": "/internal/servers/database-server-setup"
-        },
-        {
-          "title": "Convert Server into a Database Server",
-          "route": "/internal/servers/convert-server-to-database-server"
-        },
-        {
-          "title": "Database Replication",
-          "route": "/internal/servers/database-replication"
-        },
-        {
-          "title": "Database Failover",
-          "route": "/internal/servers/database-failover"
-        }
-      ]
-    },
-    {
-      "group_title": "Bench",
-      "group_items": [
-        {
-          "title": "Build a Bench",
-          "route": "/internal/bench/overview"
+          "title": "Çeviri İşlemleri",
+          "route": "/internal/language/translation"
         }
       ]
     }

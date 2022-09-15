@@ -29,10 +29,12 @@ website_route_rules = [
 	{"from_route": "/portfoy/<category>", "to_route": "Estate"},
 ]
 
+look_for_sidebar_json = True
+
 base_template_map = {
+	r"docs.*": "templates/doc.html",
 	r"internal.*": "templates/doc.html",
 }
-
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "antoryum_gayrimenkul/public/scss/website.bundle"
