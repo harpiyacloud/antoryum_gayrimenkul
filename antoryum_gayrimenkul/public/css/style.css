@@ -1,12 +1,19 @@
 @charset "utf-8";
-/*======================================
- [ -Main Stylesheet-
-  Theme: Homeradar
-  Version: 1.0
-  Last change: 17/12/2020 ]
-/*-------------Fonts---------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&display=swap');
 /*-------------General Style---------------------------------------*/
+
+@font-face {
+    font-family: 'Antoryum';
+    src: url('/assets/antoryum_gayrimenkul/fonts/antoryum.eot');
+    src: url('/assets/antoryum_gayrimenkul/fonts/antoryum.eot?#iefix') format('embedded-opentype'),
+        url('/assets/antoryum_gayrimenkul/fonts/antoryum.woff2') format('woff2'),
+        url('/assets/antoryum_gayrimenkul/fonts/antoryum.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 
 html {
 	overflow-x: hidden !important;
@@ -7491,4 +7498,10 @@ section.single-par2  .scroll-down-wrap{
 		-webkit-background-size: cover;
 		background-position: center;
 	}
+}
+
+.antoryum-slogan {
+	font-family: 'Antoryum';
+    font-weight: bold;
+    font-style: normal;	
 }
