@@ -90,14 +90,23 @@
                    <div class="single-slider-wrapper carousel-wrap fl-wrap">
                       <div class="slider-for fl-wrap carousel lightgallery"  >
                          <!--  slick-slide-item -->
-                         {% for i in images %}
+                         {% if images %}
+                           {% for i in images %}
+                           <div class="slick-slide-item">
+                              <div class="box-item">
+                                 <a href="{{ i.image }}" class="gal-link popup-image"><i class="fal fa-search"  ></i></a>
+                                 <img src="{{ i.image }}" alt="">
+                              </div>
+                           </div>
+                           {% endfor %}
+                         {% else %}
                          <div class="slick-slide-item">
-                            <div class="box-item">
-                               <a href="{{ i.image }}" class="gal-link popup-image"><i class="fal fa-search"  ></i></a>
-                               <img src="{{ i.image }}" alt="">
-                            </div>
+                           <div class="box-item">
+                              <a href="{{ doc.manset_resmi }}" class="gal-link popup-image"><i class="fal fa-search"  ></i></a>
+                              <img src="{{ doc.manset_resmi }}" alt="">
+                           </div>
                          </div>
-                         {% endfor %}
+                         {% endif %}
                          <!--  slick-slide-item end -->
                       </div>
                       <div class="swiper-button-prev ssw-btn"><i class="fas fa-caret-left"></i></div>
@@ -105,9 +114,13 @@
                    </div>
                    <div class="single-slider-wrapper fl-wrap">
                       <div class="slider-nav fl-wrap">
-                        {% for i in images%}
-                         <div class="slick-slide-item"><img src="{{ i.image }}" alt="{{ doc.title}}" style="height: 94px !important" class="img-responsive"></div>
-                        {% endfor %}
+                        {% if images %}
+                           {% for i in images%}
+                              <div class="slick-slide-item"><img src="{{ i.image }}" alt="{{ doc.title}}" style="height: 94px !important" class="img-responsive"></div>
+                           {% endfor %}
+                        {% else %}
+                        <div class="slick-slide-item"><img src="{{ doc.manset_resmi }}" alt="{{ doc.title}}" style="height: 94px !important" class="img-responsive"></div>
+                        {% endif %}
                       </div>
                    </div>
                 </div>
