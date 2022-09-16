@@ -36,6 +36,10 @@ base_template_map = {
 	r"internal.*": "templates/doc.html",
 }
 
+fixtures = [
+	{"dt": "Role", "filters": [["role_name", "like", "Estate%"]]},
+]
+
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "antoryum_gayrimenkul/public/scss/website.bundle"
 

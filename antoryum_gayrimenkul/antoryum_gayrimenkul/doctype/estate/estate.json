@@ -1514,7 +1514,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2022-09-14 11:21:27.453035",
+ "modified": "2022-09-16 17:45:37.897948",
  "modified_by": "Administrator",
  "module": "Antoryum Gayrimenkul",
  "name": "Estate",
@@ -1529,7 +1529,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Website Manager",
+   "role": "System Manager",
    "share": 1,
    "write": 1
   },
@@ -1541,7 +1541,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Blogger",
+   "role": "Estate Admin",
    "share": 1,
    "write": 1
   }

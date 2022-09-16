@@ -16,7 +16,7 @@
    "fieldname": "title",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Ba\u015fl\u0131k",
+   "label": "Başlık",
    "no_copy": 1,
    "reqd": 1
   },
@@ -25,7 +25,7 @@
    "fieldname": "published",
    "fieldtype": "Check",
    "in_list_view": 1,
-   "label": "Yay\u0131nland\u0131"
+   "label": "Yayınlandı"
   },
   {
    "depends_on": "published",
@@ -39,7 +39,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2022-09-06 00:12:07.695878",
+ "modified": "2022-09-16 17:46:25.501585",
  "modified_by": "Administrator",
  "module": "Antoryum Gayrimenkul",
  "name": "Estate Category",
@@ -53,7 +53,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Website Manager",
+   "role": "System Manager",
    "share": 1,
    "write": 1
   },
@@ -65,7 +65,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Blogger",
+   "role": "Estate Admin",
    "share": 1,
    "write": 1
   }
