@@ -30,6 +30,8 @@
   "boylam",
   "gallery",
   "manset_resmi",
+  "estate_image_section",
+  "images",
   "section_break_14",
   "content",
   "email_sent",
@@ -316,7 +318,8 @@
   {
    "fieldname": "content",
    "fieldtype": "Text Editor",
-   "label": "Açıklama"
+   "label": "Açıklama",
+   "translatable": 1
   },
   {
    "default": "0",
@@ -1507,6 +1510,17 @@
    "fieldname": "mt_birim_fiyati",
    "fieldtype": "Data",
    "label": "M2 Birim Fiyatı"
+  },
+  {
+   "fieldname": "estate_image_section",
+   "fieldtype": "Section Break",
+   "label": "İlan Resimleri"
+  },
+  {
+   "fieldname": "images",
+   "fieldtype": "Table",
+   "label": "İlan Resimleri",
+   "options": "Estate Images"
   }
  ],
  "has_web_view": 1,
@@ -1514,7 +1528,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2022-09-16 17:45:37.897948",
+ "modified": "2022-09-17 00:29:38.537094",
  "modified_by": "Administrator",
  "module": "Antoryum Gayrimenkul",
  "name": "Estate",
